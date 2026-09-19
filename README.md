@@ -8,7 +8,7 @@ espionage thriller, religious cult drama.
 
 | File | What it is |
 |---|---|
-| `severance-primed-basis.html` | The 18-page basis document, formatted as a diegetic Lumon Industries *Handbook for the Severed Employee* (setting, trait sets, mods, sample PCs, Session One) |
+| `severance-primed-basis.html` | The 19-page basis document, formatted as a diegetic Lumon Industries *Handbook for the Severed Employee* (setting, trait sets, mods, sample PCs, Session One) |
 | `charsheet.html` | Blank 2-page character sheet (the Lumon file / what's hidden) |
 | `pregens.html` | Pregenerated characters (Sol W., Ana R.) with trait-halo portraits |
 | `portraits/` | Painted retro-corporate portraits + generation metadata |
