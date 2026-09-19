@@ -8,11 +8,11 @@ espionage thriller, religious cult drama.
 
 | File | What it is |
 |---|---|
-| `severance-primed-basis.html` | The 10-page basis document (setting, trait sets, mods, sample PCs, Session One) |
+| `severance-primed-basis.html` | The 18-page basis document, formatted as a diegetic Lumon Industries *Handbook for the Severed Employee* (setting, trait sets, mods, sample PCs, Session One) |
 | `charsheet.html` | Blank 2-page character sheet (the Lumon file / what's hidden) |
 | `pregens.html` | Pregenerated characters (Sol W., Ana R.) with trait-halo portraits |
 | `portraits/` | Painted retro-corporate portraits + generation metadata |
-| `fonts/` | CortexSymbology die-glyph font (community Cortex Prime font) |
+| `fonts/` | CortexSymbology die-glyph font + the Lumon type system (Michroma, Archivo, Cinzel, IBM Plex Mono, Spectral, Caveat) |
 
 ## Building the PDFs
 
@@ -38,3 +38,18 @@ die glyphs, trait labels to the side of each die, name as caption below.
   Cold Harbor), or a named GMC (Cobel, Milchick) — never a contest against a
   faction. Pools are rolled and kept, never added.
 - Stress is Woe, Frolic, Dread, Malice. Past d12: Break Room Compunction.
+
+## The handbook is the artifact
+
+The basis document is formatted as a genuine Lumon Industries publication —
+*Handbook for the Severed Employee*, Macrodata Refinement Division
+(Doc. No. LUM-MDR-0047, Rev. 12). The design follows the show's own visual
+system: stratified typography (Michroma for corporate authority, Archivo for
+house style, Cinzel for scripture, IBM Plex Mono for terminals, Spectral for
+body), the quarantined palette (Deep Blue `#294CA2`, Turf Green, Alabaster,
+Slate — red reserved strictly for defiance), document-control apparatus,
+an intake form, personnel files, and the full Compunction Statement on a
+Break Room terminal.
+
+Running through it in contraband red: marginalia from "P." — the innie who
+stopped believing — including a torn-out Reintegration page taped back in.
