@@ -1,0 +1,6 @@
+# Build artifacts — render from the HTML sources with WeasyPrint
+*.pdf
+
+# Local QA screenshots
+qa/
+qa-sheet/
