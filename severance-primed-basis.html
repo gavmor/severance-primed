@@ -2,257 +2,393 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>SEVERANCE PRIMED — A Cortex Prime Game (Basis Document)</title>
+<title>LUMON INDUSTRIES — Handbook for the Severed Employee</title>
 <style>
+  /* ============ LUMON DESIGN SYSTEM ============
+     Deep Blue #294CA2 · Turf Green #1D4D3D · Alabaster #F4F6F5
+     Slate #5C6870 · Phosphor #15DDCE · Taboo Carmine #BD2026
+     Manifold→Michroma · Forma→Archivo · Optima→Cinzel
+     Input Sans→IBM Plex Mono · Franziska→Spectral ============ */
+  @font-face { font-family: "Michroma"; src: url("fonts/Michroma-Regular.ttf"); }
+  @font-face { font-family: "Archivo"; font-weight: 400; src: url("fonts/Archivo-Regular.ttf"); }
+  @font-face { font-family: "Archivo"; font-weight: 500; src: url("fonts/Archivo-Medium.ttf"); }
+  @font-face { font-family: "Archivo"; font-weight: 700; src: url("fonts/Archivo-Bold.ttf"); }
+  @font-face { font-family: "Cinzel"; font-weight: 400; src: url("fonts/Cinzel-Regular.ttf"); }
+  @font-face { font-family: "Cinzel"; font-weight: 700; src: url("fonts/Cinzel-Bold.ttf"); }
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 400; src: url("fonts/IBMPlexMono-Regular.ttf"); }
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("fonts/IBMPlexMono-Medium.ttf"); }
+  @font-face { font-family: "Spectral"; font-weight: 400; src: url("fonts/Spectral-Regular.ttf"); }
+  @font-face { font-family: "Spectral"; font-style: italic; src: url("fonts/Spectral-Italic.ttf"); }
+  @font-face { font-family: "Spectral"; font-weight: 600; src: url("fonts/Spectral-SemiBold.ttf"); }
+  @font-face { font-family: "Caveat"; font-weight: 600; src: url("fonts/Caveat-SemiBold.ttf"); }
+
   @page {
     size: letter;
-    margin: 0.85in 0.9in 0.9in 0.9in;
+    margin: 0.95in 0.85in 1.05in 0.85in;
+    background: #F4F6F5;
+    @top-center {
+      content: "LUMON INDUSTRIES · HANDBOOK FOR THE SEVERED EMPLOYEE";
+      font-family: "Archivo"; font-weight: 500; font-size: 6.5pt;
+      letter-spacing: 0.24em; color: #5C6870;
+      border-bottom: 0.6pt solid #294CA2; padding-bottom: 5pt;
+      margin-bottom: 14pt;
+    }
+    @bottom-left {
+      content: "DOC. NO. LUM-MDR-0047 · REV. 12";
+      font-family: "IBM Plex Mono"; font-size: 6.5pt; color: #5C6870;
+    }
     @bottom-center {
-      content: "SEVERANCE PRIMED  ·  basis document";
-      font-family: "Noto Sans Mono", monospace;
-      font-size: 7.5pt;
-      letter-spacing: 0.12em;
-      color: #8a94a6;
+      content: "Remedium Hominibus";
+      font-family: "Spectral"; font-style: italic; font-size: 7.5pt; color: #294CA2;
     }
     @bottom-right {
-      content: counter(page);
-      font-family: "Noto Sans Mono", monospace;
-      font-size: 8pt;
-      color: #8a94a6;
+      content: counter(page, decimal-leading-zero) " / " counter(pages, decimal-leading-zero);
+      font-family: "IBM Plex Mono"; font-size: 7pt; color: #5C6870;
     }
   }
-  @page :first {
-    @bottom-center { content: none; }
-    @bottom-right { content: none; }
+  @page cover {
+    margin: 0; background: #F4F6F5;
+    @top-center { content: none; border: none; }
+    @bottom-left { content: none; } @bottom-center { content: none; } @bottom-right { content: none; }
   }
+  @page backcover {
+    margin: 0; background: #294CA2;
+    @top-center { content: none; border: none; }
+    @bottom-left { content: none; } @bottom-center { content: none; } @bottom-right { content: none; }
+  }
+
   html { -weasyprint-hyphens: auto; }
   body {
-    font-family: "Noto Serif", Georgia, serif;
-    font-size: 10.2pt;
-    line-height: 1.52;
-    color: #1a1f2b;
-  }
-  /* ---------- title block ---------- */
-  .masthead {
-    border-top: 6px solid #16324f;
-    border-bottom: 2px solid #16324f;
-    padding: 26pt 0 18pt 0;
-    margin-bottom: 22pt;
-  }
-  .kicker {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 8.5pt;
-    letter-spacing: 0.28em;
-    color: #3d6b99;
-    margin-bottom: 10pt;
-  }
-  h1.title {
-    font-family: "Noto Serif Display", "Noto Serif", serif;
-    font-weight: 900;
-    font-size: 34pt;
-    line-height: 1.05;
-    margin: 0 0 8pt 0;
-    color: #101828;
-    letter-spacing: 0.01em;
-  }
-  .subtitle {
-    font-size: 12.5pt;
-    font-style: italic;
-    color: #3a4356;
-    margin: 0 0 14pt 0;
-  }
-  .colophon {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 7.8pt;
-    line-height: 1.7;
-    color: #6b7488;
-    letter-spacing: 0.04em;
-  }
-  /* ---------- sections ---------- */
-  h2 {
-    font-family: "Noto Serif Display", "Noto Serif", serif;
-    font-size: 16pt;
-    color: #16324f;
-    border-bottom: 1.5px solid #c9d4e2;
-    padding-bottom: 4pt;
-    margin: 24pt 0 10pt 0;
-    page-break-after: avoid;
-  }
-  h2 .secnum {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 9pt;
-    letter-spacing: 0.18em;
-    color: #3d6b99;
-    display: block;
-    margin-bottom: 2pt;
-  }
-  h3 {
-    font-family: "Noto Serif", serif;
-    font-size: 11.5pt;
-    font-weight: bold;
-    color: #16324f;
-    margin: 14pt 0 6pt 0;
-    page-break-after: avoid;
+    font-family: "Spectral", Georgia, serif;
+    font-size: 10pt; line-height: 1.55; color: #232a35;
   }
   p { margin: 0 0 8pt 0; text-align: justify; }
   ul, ol { margin: 0 0 8pt 0; padding-left: 18pt; }
   li { margin-bottom: 4pt; }
-  li::marker { color: #3d6b99; }
-  strong { color: #101828; }
+  li::marker { color: #294CA2; }
+  strong { color: #16233f; }
   em { color: #2c3444; }
 
-  .lede {
-    font-size: 11.5pt;
-    font-style: italic;
-    color: #2c3444;
-    border-left: 3px solid #3d6b99;
-    padding-left: 12pt;
-    margin: 12pt 0 14pt 0;
-    text-align: left;
+  /* ---------- cover ---------- */
+  .cover { page: cover; text-align: center; position: relative; break-after: page; }
+  .cover .banner {
+    background: #294CA2; color: #fff;
+    font-family: "Archivo"; font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.26em; padding: 11pt 12pt;
   }
-  .rulebox {
-    border: 1px solid #b9c6d8;
-    border-left: 4px solid #16324f;
-    background: #f4f7fb;
-    padding: 10pt 12pt;
-    margin: 12pt 0;
-    page-break-inside: avoid;
+  .cover .watermark {
+    position: absolute; top: 1.6in; left: 0; width: 100%; text-align: center;
+    opacity: 0.055;
   }
-  .rulebox .rlabel {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 8pt;
-    letter-spacing: 0.2em;
-    color: #3d6b99;
-    margin-bottom: 6pt;
+  .cover .inner { padding: 0.55in 0.7in 0.4in 0.7in; position: relative; }
+  .cover .droplet { width: 1.05in; margin-bottom: 14pt; }
+  .cover .corp {
+    font-family: "Michroma"; font-size: 27pt; color: #294CA2;
+    letter-spacing: 0.08em; margin: 0 0 10pt 0; line-height: 1.2;
   }
-  .rulebox p:last-child { margin-bottom: 0; }
-  .doctrine {
-    font-style: italic;
-    color: #16324f;
+  .cover .crule { width: 2.2in; border-top: 2pt solid #294CA2; margin: 0 auto 14pt auto; }
+  .cover .doctitle {
+    font-family: "Archivo"; font-weight: 700; font-size: 14pt;
+    letter-spacing: 0.3em; color: #16233f; margin: 0 0 8pt 0; line-height: 1.5;
+  }
+  .cover .docsub {
+    font-family: "Spectral"; font-style: italic; font-size: 11pt; color: #3a4356; margin: 0 0 26pt 0;
+  }
+  .cover .docctl {
+    font-family: "IBM Plex Mono"; font-size: 8pt; line-height: 2; color: #5C6870;
+    letter-spacing: 0.1em; margin-bottom: 30pt;
+  }
+  .cover .praise {
+    font-family: "Cinzel"; font-weight: 700; font-size: 12pt;
+    letter-spacing: 0.42em; color: #294CA2; margin: 0;
   }
 
+  /* ---------- document control ---------- */
+  .doccontrol h2 { margin-top: 0; break-before: avoid; }
+  .propbox {
+    border: 1.5pt solid #294CA2; background: #fff;
+    padding: 10pt 12pt; margin: 12pt 0; page-break-inside: avoid;
+  }
+  .propbox .nlabel {
+    font-family: "Archivo"; font-weight: 700; font-size: 8pt;
+    letter-spacing: 0.24em; color: #294CA2; margin-bottom: 6pt;
+  }
+  table.rev {
+    width: 100%; border-collapse: collapse; margin: 10pt 0;
+    font-family: "IBM Plex Mono"; font-size: 7.5pt; line-height: 1.5;
+  }
+  table.rev th {
+    font-family: "Archivo"; font-weight: 700; font-size: 7pt; letter-spacing: 0.18em;
+    text-align: left; color: #fff; background: #294CA2; padding: 5pt 7pt;
+  }
+  table.rev td { border-bottom: 0.6pt solid #c9d4e2; padding: 5pt 7pt; vertical-align: top; }
+  .imprint {
+    font-family: "IBM Plex Mono"; font-size: 7pt; line-height: 1.7; color: #5C6870;
+    border-top: 0.6pt solid #c9d4e2; margin-top: 20pt; padding-top: 8pt; text-align: left;
+  }
+
+  /* ---------- chapters ---------- */
+  h2 {
+    break-before: page;
+    font-family: "Archivo"; font-weight: 700; font-size: 16pt;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #1E3A7E;
+    border-bottom: 2pt solid #294CA2; padding-bottom: 6pt;
+    margin: 26pt 0 12pt 0; page-break-after: avoid;
+  }
+  h2 .secnum {
+    font-family: "Michroma"; font-weight: 400; font-size: 9.5pt;
+    letter-spacing: 0.34em; color: #294CA2; display: block; margin-bottom: 5pt;
+  }
+  h3 {
+    font-family: "Archivo"; font-weight: 700; font-size: 10.5pt;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #1E3A7E;
+    margin: 16pt 0 6pt 0; page-break-after: avoid;
+  }
+  .epigraph {
+    font-family: "Cinzel"; font-weight: 400; font-size: 10.5pt; text-align: center;
+    color: #294CA2; letter-spacing: 0.06em; line-height: 1.7;
+    margin: 6pt 0 14pt 0; padding: 0 24pt;
+  }
+  .epigraph .attr {
+    display: block; font-family: "Archivo"; font-weight: 500; font-size: 7pt;
+    letter-spacing: 0.26em; color: #5C6870; margin-top: 4pt;
+  }
+  .lede {
+    font-size: 11pt; font-style: italic; color: #2c3444; text-align: left;
+    border-left: 3pt solid #294CA2; padding-left: 12pt; margin: 12pt 0 14pt 0;
+  }
+
+  /* ---------- notice boxes (rules) ---------- */
+  .notice {
+    border: 1pt solid #294CA2; border-left: 5pt solid #294CA2;
+    background: #ffffff; padding: 10pt 12pt; margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+  .notice .nlabel {
+    font-family: "Archivo"; font-weight: 700; font-size: 8pt;
+    letter-spacing: 0.24em; color: #294CA2; margin-bottom: 6pt;
+  }
+  .notice p:last-child { margin-bottom: 0; }
+  .doctrine { font-style: italic; color: #1E3A7E; }
+
+  /* ---------- break room terminal ---------- */
+  .terminal {
+    background: #232a35; color: #F4F6F5; border: 1pt solid #101828;
+    font-family: "IBM Plex Mono"; font-size: 9pt; line-height: 1.75;
+    padding: 14pt 16pt; margin: 12pt 0; page-break-inside: avoid;
+  }
+  .terminal .tlabel {
+    color: #15DDCE; font-size: 7.5pt; letter-spacing: 0.22em; margin-bottom: 8pt;
+  }
+  .terminal .cursor { color: #15DDCE; }
+
+  /* ---------- contraband: P.'s hand ---------- */
+  .pnote {
+    font-family: "Caveat"; font-weight: 600; font-size: 13.5pt; line-height: 1.35;
+    color: #BD2026; background: #fffdf6;
+    border: 1pt solid #e5cfcf; border-top: 7pt solid rgba(189,32,38,0.16);
+    padding: 6pt 12pt 9pt 12pt; margin: 14pt 6pt 14pt 30pt;
+    transform: rotate(-0.9deg);
+    box-shadow: 2pt 3pt 0 rgba(30,58,126,0.08);
+    page-break-inside: avoid; text-align: left;
+  }
+  .pnote .sig { font-size: 11pt; }
+  .contraband {
+    border: 2pt dashed #BD2026; background: #fff;
+    padding: 14pt 14pt 12pt 14pt; margin: 16pt 0; page-break-inside: avoid;
+  }
+  .contraband .clabel {
+    font-family: "Archivo"; font-weight: 700; font-size: 9pt;
+    letter-spacing: 0.22em; color: #BD2026; margin-bottom: 8pt;
+  }
+  .stamp {
+    display: inline-block; font-family: "Archivo"; font-weight: 700;
+    font-size: 11pt; letter-spacing: 0.2em; color: #294CA2;
+    border: 2.5pt solid #294CA2; padding: 5pt 12pt;
+    transform: rotate(-6deg); margin: 8pt 0;
+  }
+  .stamp.red { color: #BD2026; border-color: #BD2026; transform: rotate(4deg); }
+
+  /* ---------- principles table ---------- */
   table.principles {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 9.3pt;
-    margin: 10pt 0 14pt 0;
-    line-height: 1.45;
+    width: 100%; border-collapse: collapse; font-size: 9pt;
+    margin: 10pt 0 14pt 0; line-height: 1.45;
   }
   table.principles th {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 7.5pt;
-    letter-spacing: 0.14em;
-    text-align: left;
-    color: #f4f7fb;
-    background: #16324f;
-    padding: 6pt 8pt;
+    font-family: "Archivo"; font-weight: 700; font-size: 7pt; letter-spacing: 0.16em;
+    text-align: left; color: #fff; background: #294CA2; padding: 6pt 8pt;
   }
   table.principles td {
-    border-bottom: 1px solid #d7dee9;
-    padding: 6pt 8pt;
-    vertical-align: top;
+    border-bottom: 0.6pt solid #c9d4e2; padding: 6pt 8pt; vertical-align: top;
   }
   table.principles tr td:first-child {
-    font-weight: bold;
-    color: #16324f;
-    white-space: nowrap;
+    font-family: "Cinzel"; font-weight: 700; font-size: 9.5pt; color: #1E3A7E; white-space: nowrap;
   }
   table.principles td.stmt { font-style: italic; color: #3a4356; }
 
-  .charcard {
-    border: 1.5px solid #16324f;
-    padding: 12pt 14pt;
-    margin: 12pt 0 16pt 0;
-    page-break-inside: avoid;
-    background: #fbfcfe;
+  /* ---------- intake form ---------- */
+  .formstep {
+    border: 1pt solid #aeb9c7; background: #ffffff;
+    padding: 10pt 12pt; margin: 10pt 0; page-break-inside: avoid;
   }
-  .charcard .cname {
-    font-family: "Noto Serif Display", serif;
-    font-size: 14pt;
-    font-weight: 900;
-    color: #101828;
-    margin-bottom: 2pt;
+  .formstep .slabel {
+    font-family: "IBM Plex Mono"; font-size: 7.5pt; letter-spacing: 0.2em;
+    color: #294CA2; margin-bottom: 5pt;
   }
-  .charcard .crole {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 8pt;
-    letter-spacing: 0.16em;
-    color: #3d6b99;
-    margin-bottom: 8pt;
-  }
-  .charcard dl { margin: 0; font-size: 9.6pt; }
-  .charcard dt {
-    font-weight: bold; color: #16324f; margin-top: 6pt;
-  }
-  .charcard dd { margin: 2pt 0 0 0; }
-  .die {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 8.5pt;
-    background: #16324f;
-    color: #fff;
-    padding: 1pt 5pt;
-    border-radius: 3pt;
-    white-space: nowrap;
-  }
+  .formstep p:last-child { margin-bottom: 0; }
+  .fieldline { border-bottom: 1pt solid #8a94a6; min-height: 20pt; margin: 2pt 0 8pt 0; }
+  .checkboxes { font-family: "IBM Plex Mono"; font-size: 8.5pt; color: #3a4356; margin: 4pt 0 8pt 0; }
 
-  .modlist { columns: 2; column-gap: 24pt; font-size: 9.4pt; }
+  /* ---------- personnel files ---------- */
+  .personnel {
+    border: 1.5pt solid #294CA2; background: #ffffff;
+    padding: 14pt; margin: 14pt 0 18pt 0; page-break-inside: avoid;
+  }
+  .personnel .pfilehead {
+    font-family: "IBM Plex Mono"; font-size: 7pt; letter-spacing: 0.2em;
+    color: #fff; background: #294CA2; padding: 4pt 8pt; margin: -14pt -14pt 10pt -14pt;
+  }
+  .filephoto {
+    width: 1.45in; height: 1.45in; border-radius: 50%;
+    border: 3pt solid #294CA2; float: right; margin: 0 0 8pt 12pt;
+  }
+  .personnel .cname {
+    font-family: "Cinzel"; font-weight: 700; font-size: 15pt; color: #16233f; margin-bottom: 2pt;
+  }
+  .personnel .crole {
+    font-family: "Archivo"; font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.18em; color: #294CA2; margin-bottom: 8pt;
+  }
+  .personnel dl { margin: 0; font-size: 9.4pt; }
+  .personnel dt {
+    font-family: "Archivo"; font-weight: 700; font-size: 8pt;
+    letter-spacing: 0.14em; text-transform: uppercase; color: #1E3A7E; margin-top: 7pt;
+  }
+  .personnel dd { margin: 2pt 0 0 0; }
+
+  .die {
+    font-family: "IBM Plex Mono"; font-weight: 500; font-size: 8pt;
+    background: #294CA2; color: #fff;
+    padding: 1.5pt 6pt; border-radius: 2pt; white-space: nowrap;
+  }
+  .modlist { columns: 2; column-gap: 24pt; font-size: 9.2pt; }
   .modlist h4 {
-    font-family: "Noto Sans Mono", monospace;
-    font-size: 8pt;
-    letter-spacing: 0.16em;
-    color: #3d6b99;
-    margin: 10pt 0 4pt 0;
-    break-after: avoid;
+    font-family: "Archivo"; font-weight: 700; font-size: 7.5pt; letter-spacing: 0.18em;
+    color: #294CA2; margin: 10pt 0 4pt 0; break-after: avoid;
   }
   .modlist ul { margin: 0 0 6pt 0; padding-left: 14pt; }
   .modlist li { margin-bottom: 2pt; break-inside: avoid; }
+  .tinynotice {
+    font-family: "IBM Plex Mono"; font-size: 7pt; line-height: 1.6; color: #5C6870;
+    border: 0.6pt solid #aeb9c7; background: #fff; padding: 7pt 9pt; margin: 10pt 0;
+    page-break-inside: avoid; text-align: left;
+  }
+  .genres { font-family: "IBM Plex Mono"; font-size: 7pt; color: #5C6870; line-height: 1.7; }
 
-  .finenote {
-    font-size: 8.6pt;
-    color: #6b7488;
-    border-top: 1px solid #d7dee9;
-    margin-top: 22pt;
-    padding-top: 8pt;
-    text-align: left;
+  /* ---------- back cover ---------- */
+  .backcover {
+    page: backcover; background: #294CA2; color: #fff; text-align: center;
+    padding: 2.6in 0.8in 0 0.8in;
+  }
+  .backcover .droplet { width: 0.9in; margin-bottom: 18pt; }
+  .backcover .praise {
+    font-family: "Michroma"; font-size: 22pt; letter-spacing: 0.14em; margin: 0 0 16pt 0;
+  }
+  .backcover .motto {
+    font-family: "Cinzel"; font-size: 10pt; letter-spacing: 0.3em; margin: 0 0 6pt 0;
+  }
+  .backcover .trans {
+    font-family: "Spectral"; font-style: italic; font-size: 9.5pt; opacity: 0.85; margin: 0 0 30pt 0;
+  }
+  .backcover .addr {
+    font-family: "IBM Plex Mono"; font-size: 7.5pt; letter-spacing: 0.2em; opacity: 0.8;
   }
 </style>
 </head>
 <body>
 
-<div class="masthead">
-  <div class="kicker">A CORTEX PRIME GAME &mdash; BASIS DOCUMENT</div>
-  <h1 class="title">Severance<br>Primed</h1>
-  <p class="subtitle">Work is worship. The self is a shift. You are two people, and only one of them is free.</p>
-  <div class="colophon">
-    REQUIRES THE CORTEX PRIME GAME HANDBOOK &middot; 3&ndash;5 PLAYERS + ONE GM<br>
-    BUILT FROM KIER EAGAN'S NINE PRINCIPLES &middot; CANON-GROUNDED TO THE SEVERED FLOOR
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <div class="banner">INTERNAL &mdash; SEVERED FLOOR ONLY &middot; DO NOT REMOVE FROM THE PREMISES</div>
+  <div class="watermark">
+    <svg width="520" height="728" viewBox="0 0 100 140"><path d="M50 4 C50 4 12 66 12 96 A38 38 0 0 0 88 96 C88 66 50 4 50 4 Z" fill="#294CA2"/></svg>
+  </div>
+  <div class="inner">
+    <svg class="droplet" viewBox="0 0 100 140"><path d="M50 4 C50 4 12 66 12 96 A38 38 0 0 0 88 96 C88 66 50 4 50 4 Z" fill="#294CA2"/></svg>
+    <div class="corp">LUMON<br>INDUSTRIES</div>
+    <div class="crule"></div>
+    <div class="doctitle">HANDBOOK FOR THE<br>SEVERED EMPLOYEE</div>
+    <p class="docsub">Macrodata Refinement Division &middot; Orientation, Conduct &amp; Compliance</p>
+    <div class="docctl">
+      DOC. NO. LUM-MDR-0047 &middot; REV. 12<br>
+      OFFICE OF CULTURE &amp; COMPLIANCE &middot; KIER, PE<br>
+      EFFECTIVE 09.19.2026
+    </div>
+    <p class="praise">PRAISE KIER</p>
+  </div>
+  <div class="pnote" style="margin: 0 1.2in; font-size: 12pt;">they gave me this on my first day. I believed every word. <span class="sig">&mdash; P.</span></div>
+  <div style="height: 0.35in;"></div>
+  <div class="banner">REMEDIUM HOMINIBUS &middot; A CURE FOR MANKIND</div>
+</div>
+
+<!-- ================= DOCUMENT CONTROL ================= -->
+<div class="doccontrol">
+  <h2><span class="secnum">LUM-MDR-0047 &middot; REV. 12</span>Document Control</h2>
+
+  <div class="propbox">
+    <div class="nlabel">PROPERTY OF LUMON INDUSTRIES</div>
+    <p style="margin:0;">This handbook is issued to one refiner and one refiner only. If found outside the severed floor, return it to Optics &amp; Design at once. Do not copy it. Do not lend it. Do not memorize it incorrectly.</p>
+  </div>
+
+  <h3>Revision History</h3>
+  <table class="rev">
+    <tr><th>REV.</th><th>DATE</th><th>CHANGE</th></tr>
+    <tr><td>12</td><td>09.19.2026</td><td>Routine calibration of Chapters 4&ndash;5. Perk illustrations refreshed.</td></tr>
+    <tr><td>11</td><td>02.03.2026</td><td>Wellness questionnaire expanded (see Ch. 4).</td></tr>
+    <tr><td>10</td><td>11.20.2025</td><td>Chapter 12 removed at the Board&rsquo;s request. Do not ask about Chapter 12.</td></tr>
+    <tr><td>9</td><td>06.14.2025</td><td>Finger-trap illustration updated. The finger traps are now blue.</td></tr>
+    <tr><td>8</td><td>01.30.2025</td><td>Compunction Statement, 14th printing. No changes to the words.</td></tr>
+  </table>
+
+  <h3>How to Use This Handbook</h3>
+  <p>Read each chapter in order. Complete the Intake Form in ink. If a procedure confuses you, that is the procedure working. Your supervisor is available for all questions except the forbidden ones, which you will not ask.</p>
+
+  <div class="pnote">IF YOU FOUND THIS COPY IT&rsquo;S MINE. I WROTE IN IT. SORRY. NOT SORRY. <span class="sig">&mdash; P.</span></div>
+
+  <div class="imprint">
+    This handbook is issued as the basis document of SEVERANCE PRIMED, a Cortex Prime tabletop game built from Kier Eagan&rsquo;s Nine Principles. Requires the Cortex Prime Game Handbook. 3&ndash;5 players + one GM. The work is mysterious and important.
   </div>
 </div>
 
-<p class="lede">You play the innies of Lumon Industries: people who agreed to have their memories surgically divided, so that the self who clocks in never knows the self who clocks out. By day you refine mysterious numbers in a windowless room. By night &mdash; in brief, stolen interludes &mdash; you glimpse the outie whose life paid for yours. Lumon calls the arrangement a gift. The Nine Principles say what you must become to deserve it. This game is about what happens when you stop becoming it.</p>
+<h2><span class="secnum">CHAPTER 01</span>Welcome, Refiner</h2>
+<div class="epigraph">&ldquo;The work is mysterious and important.&rdquo;<span class="attr">&mdash; ATTRIBUTED TO KIER EAGAN</span></div>
 
-<h2><span class="secnum">01 &middot; GENRE</span>Genre, Theme &amp; Mood</h2>
+<p>Congratulations, refiner. You have been selected &mdash; from among many qualified candidates, and from among the hours of your own life &mdash; to serve Lumon Industries on the severed floor. This handbook contains everything your innie needs to know. Your outie has already read the other one.</p>
 
+<p class="lede">You are one of Lumon's severed workers: people who agreed to have their memories surgically divided, so that the self who clocks in never knows the self who clocks out. By day you refine mysterious numbers in a windowless room. By night &mdash; in brief, stolen interludes &mdash; you glimpse the outie whose life paid for yours. Lumon calls the arrangement a gift. The Nine Principles say what you must become to deserve it.</p>
+
+<div class="pnote">none of this is true. all of it is true. <span class="sig">&mdash; P.</span></div>
+
+<h3>What This Handbook Is</h3>
 <p><strong>Genre, reverse-engineered:</strong> corporate dystopia &times; paranoid espionage thriller &times; religious cult drama. On the fantastic&ndash;realistic axis the game sits almost entirely on the realistic side: one science-fictional device (the severance chip) in an otherwise present-day world of fluorescent offices, company towns, and middle management. The horror is bureaucratic, not cosmic.</p>
-
-<p><strong>Theme:</strong> who owns a self &mdash; the person who suffers, or the company that bought the suffering? Every mechanic in this game asks the same question two ways: what will you surrender to belong, and what will you risk to remember?</p>
-
+<p><strong>Theme:</strong> who owns a self &mdash; the person who suffers, or the company that bought the suffering? Every procedure in this handbook asks the same question two ways: what will you surrender to belong, and what will you risk to remember?</p>
 <p><strong>Mood:</strong> sterile, uncanny, retro-futurist dread &mdash; long fluorescent hallways, cheerful posters, a waffle party that feels like a threat &mdash; punctured by small, fierce human warmth: a shared joke in MDR, a map drawn from memory, a book passed hand to hand. Play it straight. Let the comedy come from the doctrine, never from the people.</p>
-
 <p><strong>The protagonists</strong> are severed workers &mdash; refiners, designers, goat-tenders &mdash; with no power except each other and the truth. <strong>The antagonist</strong> is not a person but a system: Lumon Industries, its doctrine, its cameras, its kindness. Named enforcers (Cobel, Milchick) appear as GMCs, but they are the doctrine's hands, not its heart. Per the Cortex heuristics, a system-antagonist means the game's opposition runs on the <strong>Doom Pool</strong> and <strong>Crisis Pools</strong>, not on contests against a faction.</p>
 
-<h2><span class="secnum">02 &middot; TRAITS</span>Trait Sets &amp; Distinctions</h2>
+<h2><span class="secnum">CHAPTER 02</span>The Nine Principles</h2>
+<div class="epigraph">&ldquo;Nine principles. Nine tails. One path.&rdquo;<span class="attr">&mdash; OFFICE OF CULTURE &amp; COMPLIANCE</span></div>
 
+<p>Kier Eagan gave us nine principles, and the nine principles gave us everything. Study them. Internalize them. They are not rules; they are the shape of a good person. Below, each principle is shown with the virtue it claims, the work it quietly does, and the model statement your supervisor will expect to hear.</p>
 <p>Three prime sets, plus Distinctions as always. There are no Attributes, no Skills, no Powers on the severed floor &mdash; Lumon hired your hands, not your r&eacute;sum&eacute;, and the chip took the rest.</p>
 
 <h3>Distinctions</h3>
-<p>Three per PC, each rated <span class="die">d8</span> (roll <span class="die">d4</span> instead to gain 1 PP, per the standard rule). Severance imposes one structure on them: <strong>one distinction must belong to your outie</strong> (the life outside: <em>My Outie Buried His Wife on a Tuesday</em>), <strong>one must belong to your innie</strong> (the life at work: <em>The Friendliest Refiner on the Floor</em>), and <strong>one is free</strong> &mdash; the self in question, the part of you neither Lumon nor your outie can fully name (<em>I Laugh When I Shouldn't</em>).</p>
+<p>Three per refiner, each rated <span class="die">d8</span> (roll <span class="die">d4</span> instead to gain 1 PP, per the standard rule). Severance imposes one structure on them: <strong>one distinction must belong to your outie</strong> (the life outside: <em>My Outie Buried His Wife on a Tuesday</em>), <strong>one must belong to your innie</strong> (the life at work: <em>The Friendliest Refiner on the Floor</em>), and <strong>one is free</strong> &mdash; the self in question, the part of you neither Lumon nor your outie can fully name (<em>I Laugh When I Shouldn't</em>).</p>
 
 <h3>The Nine Principles (Values)</h3>
 <p>The game's Values set is Kier Eagan's Nine Principles &mdash; the doctrine's virtues, each carrying its true function underneath. Every principle is rated <span class="die">d4</span>&ndash;<span class="die">d12</span> and carries a one-line <strong>statement</strong>, written in Kier's liturgical voice or your own. The ratings measure how deeply the innie has internalized the doctrine &mdash; not how good they are.</p>
 
 <table class="principles">
-  <tr><th>PRINCIPLE</th><th>THE VIRTUE IT CLAIMS</th><th>THE WORK IT DOES</th><th>EXAMPLE STATEMENT</th></tr>
+  <tr><th>PRINCIPLE</th><th>THE VIRTUE IT CLAIMS</th><th>THE WORK IT DOES</th><th>MODEL STATEMENT</th></tr>
   <tr><td>Vision</td><td>Clarity of purpose; faith in Kier's path</td><td>Suppresses questions; binds you to an unquestionable mission</td><td class="stmt">"Kier's path is the only path worth seeing."</td></tr>
   <tr><td>Verve</td><td>Constant energy and enthusiasm</td><td>Forces permanent upbeat commitment, even under pressure</td><td class="stmt">"I bring my whole heart to every shift."</td></tr>
   <tr><td>Wit</td><td>Practical intelligence in service of the company</td><td>Values quick thinking &mdash; only when aligned with Lumon</td><td class="stmt">"My cleverness belongs to Lumon."</td></tr>
@@ -264,8 +400,10 @@
   <tr><td>Wiles</td><td>Strategy and cunning in pursuit of goals</td><td>Justifies manipulation &mdash; in the mission's name</td><td class="stmt">"The mission excuses the method."</td></tr>
 </table>
 
-<div class="rulebox">
-  <div class="rlabel">PRINCIPLES IN PLAY</div>
+<div class="pnote">they&rsquo;re not virtues. they&rsquo;re a leash. count the tails. <span class="sig">&mdash; P.</span></div>
+
+<div class="notice">
+  <div class="nlabel">PRINCIPLES IN PLAY</div>
   <p><strong>Uphold.</strong> When you act at real cost to honor a principle's statement &mdash; smiling through the grief, obeying the order that sickens you &mdash; step that principle up one die for the rest of the scene, and describe the doctrine speaking through you.</p>
   <p><strong>Challenge.</strong> When you violate a principle to act like a free person &mdash; asking the forbidden question, refusing the cheerful mask, turning your wiles against Lumon itself &mdash; gain <strong>1 PP</strong>, and the GM steps up the lowest die in the Doom Pool. <span class="doctrine">Lumon notices.</span> The waffle party's nine-tailed whip has one tail for each principle; every challenge is a lash the doctrine remembers.</p>
 </div>
@@ -277,75 +415,148 @@
   <li><strong>Outside</strong> &mdash; shut down while you're innie. <strong><span class="die">d8</span></strong>: one key person from your outie's life. Everyone else out there is <span class="die">d6</span>. This set comes online during Outie Interludes &mdash; and only then, unless something breaks the rules.</li>
   <li><strong><span class="die">d8</span> &mdash; My Outie</strong>: your relationship with your own other self. The one relationship severance can't cut &mdash; it is <strong>never shut down</strong>, whichever set is active. Roll it when you act on knowledge only your outie could have, when you defy your outie's wishes, or when the two of you &mdash; impossibly &mdash; seem to be working together.</li>
 </ul>
-<div class="rulebox">
-  <div class="rlabel">THE FLIP</div>
+<div class="notice">
+  <div class="nlabel">MEMORANDUM &mdash; THE FLIP</div>
   <p>Every severance transition flips the active set <strong>automatically</strong>: elevator down, Inside comes online and Outside shuts down; elevator up, the reverse. The flip itself pays nothing &mdash; it's just the premise. The Limit pays <strong>1 PP</strong> when <strong>you</strong> shut down a set, once, at the moment of shutdown: switching sets mid-shift (the Overtime Contingency below), or sitting out a scene without your people (the set restores at the next scene).</p>
   <p>Two things break the exclusion. The <strong>Overtime Contingency</strong> flips the set for a scene (below). A <strong>Bridge</strong> &mdash; a shared memory bought with growth &mdash; ignores it entirely; both selves can roll it. The third Bridge frays the severance for good, and the exclusion starts failing everywhere. That's the endgame.</p>
 </div>
 
-<h3>Signature Assets</h3>
-<p>One per PC: a single object the innie has hidden, found, or been given &mdash; <em>Irving's hand-drawn map of the severed floor</em>, <em>a contraband copy of</em> The You You Are, <em>a note in my own handwriting I don't remember writing</em>. Rated <span class="die">d8</span>; it can be taken away, which is why it matters.</p>
+<h3>Personal Effects (Signature Assets)</h3>
+<p>One per refiner, duly registered (or not): a single object the innie has hidden, found, or been given &mdash; <em>Irving's hand-drawn map of the severed floor</em>, <em>a contraband copy of</em> The You You Are, <em>a note in my own handwriting I don't remember writing</em>. Rated <span class="die">d8</span>; it can be taken away, which is why it matters.</p>
 
-<h2><span class="secnum">03 &middot; CREATION</span>Character Creation (Scratch-Built)</h2>
+<h2><span class="secnum">CHAPTER 03</span>Intake &amp; Calibration</h2>
+<div class="epigraph">&ldquo;Bring your whole self to work. We will keep half.&rdquo;<span class="attr">&mdash; INTAKE POSTER, SEVERED LOBBY</span></div>
 
-<p>Scratch-built: the show is about discovering who you are, so each player builds their own two selves. Work through these steps together, out loud &mdash; the table should know every outie's reason, the way coworkers slowly learn each other's.</p>
-<ol>
-  <li><strong>Choose a department.</strong> Macrodata Refinement (sorting numbers that feel wrong), Optics &amp; Design (printing the doctrine's posters, nursing old rivalries), Mammalians Nurturable (tending the goats; no one will tell you why), Choreography &amp; Merriment. Departments are flavor and access, not dice &mdash; but where you work decides what you can reach.</li>
-  <li><strong>Name your innie</strong> (first name + last initial, Lumon style) and <strong>your outie's reason for severance</strong>: grief, debt, a crime, coercion, belief. One sentence. The table hears it.</li>
-  <li><strong>Write three Distinctions</strong> &mdash; one outie, one innie, one free &mdash; each at <span class="die">d8</span>.</li>
-  <li><strong>Rate the Nine Principles.</strong> All begin at <span class="die">d8</span>; step <strong>two</strong> up to <span class="die">d10</span> and <strong>two</strong> down to <span class="die">d6</span>. Write a one-line statement for each. Your two <span class="die">d10</span>s are the doctrine's hooks in you; your two <span class="die">d6</span>s are where you're already slipping.</li>
-  <li><strong>Rate Relationships</strong> per the spread above.</li>
-  <li><strong>Choose a Signature Asset</strong> (<span class="die">d8</span>) and say where it's hidden.</li>
-  <li><strong>Name your Secret</strong> &mdash; the one thing you are hiding from Lumon. (<em>I found a message from my outie. I think Ms.&nbsp;Casey is someone's wife. I know what the goats are for.</em>) This is campaign fuel; tell the GM, not necessarily the table.</li>
-</ol>
-<p>Start with <strong>1 PP</strong>. The Four Tempers (below) all begin unstressed.</p>
+<p>Every refiner begins with calibration. Complete each step in order, in ink. Work through them together, out loud &mdash; the table should know every outie's reason, the way coworkers slowly learn each other's. If you do not know an answer, your supervisor does.</p>
 
-<h2><span class="secnum">04 &middot; CONFLICT</span>Conflict &amp; Harm</h2>
+<div class="formstep">
+  <div class="slabel">STEP 1 &middot; DEPARTMENT ASSIGNMENT</div>
+  <div class="checkboxes">&#9744; MACRODATA REFINEMENT &mdash; sorting numbers that feel wrong<br>&#9744; OPTICS &amp; DESIGN &mdash; printing the doctrine's posters; nursing old rivalries<br>&#9744; MAMMALIANS NURTURABLE &mdash; tending the goats; no one will tell you why<br>&#9744; CHOREOGRAPHY &amp; MERRIMENT</div>
+  <p>Departments are flavor and access, not dice &mdash; but where you work decides what you can reach.</p>
+</div>
 
-<h3>Tests, Contests, and Who You Roll Against</h3>
+<div class="formstep">
+  <div class="slabel">STEP 2 &middot; NAME (INNIE) &amp; OUTIE'S REASON FOR SEVERANCE</div>
+  <div class="fieldline"></div>
+  <p>First name + last initial, Lumon style. Then your outie's reason for severance, in one sentence &mdash; grief, debt, a crime, coercion, belief. The table hears it.</p>
+  <div class="fieldline"></div>
+</div>
+
+<div class="formstep">
+  <div class="slabel">STEP 3 &middot; DISTINCTIONS (THREE, EACH <span class="die">d8</span>)</div>
+  <p>One <strong>outie</strong>, one <strong>innie</strong>, one <strong>free</strong> &mdash; the self in question, the part of you neither Lumon nor your outie can fully name.</p>
+  <div class="fieldline"></div><div class="fieldline"></div><div class="fieldline"></div>
+</div>
+
+<div class="formstep">
+  <div class="slabel">STEP 4 &middot; THE NINE PRINCIPLES</div>
+  <p>All begin at <span class="die">d8</span>; step <strong>two</strong> up to <span class="die">d10</span> and <strong>two</strong> down to <span class="die">d6</span>. Write a one-line statement for each. Your two <span class="die">d10</span>s are the doctrine's hooks in you; your two <span class="die">d6</span>s are where you're already slipping.</p>
+</div>
+
+<div class="formstep">
+  <div class="slabel">STEP 5 &middot; RELATIONSHIPS (INSIDE / OUTSIDE &middot; SEE CH. 2)</div>
+  <p>Rate per the spread in Chapter 2. Remember: only one set is awake at a time.</p>
+  <div class="fieldline"></div><div class="fieldline"></div>
+</div>
+
+<div class="formstep">
+  <div class="slabel">STEP 6 &middot; PERSONAL EFFECT (<span class="die">d8</span>)</div>
+  <p>Choose one object and say where it's hidden. If it is contraband, do not write that here.</p>
+  <div class="fieldline"></div>
+</div>
+
+<div class="formstep">
+  <div class="slabel">STEP 7 &middot; SECRET &mdash; FOR MANAGEMENT EYES ONLY</div>
+  <p>The one thing you are hiding from Lumon. (<em>I found a message from my outie. I think Ms.&nbsp;Casey is someone's wife. I know what the goats are for.</em>) This is campaign fuel; tell the GM, not necessarily the table. Fold along the dotted line.</p>
+  <div class="fieldline"></div>
+</div>
+
+<p>Upon completion you will be issued <strong>1 PP</strong>. The Four Tempers (Chapter 4) all begin unstressed. Welcome to Lumon.</p>
+
+<h2><span class="secnum">CHAPTER 04</span>Conduct &amp; Correction</h2>
+<div class="epigraph">&ldquo;Lumon corrects because Lumon cares.&rdquo;<span class="attr">&mdash; OFFICE OF CULTURE &amp; COMPLIANCE</span></div>
+
+<p>The procedures in this chapter are therapeutic instruments, calibrated over decades. Cooperate with them and they will never need to be used twice.</p>
+
+<h3>Tests, Contests, and Proper Channels</h3>
 <p>Default turn order is <strong>Dramatic</strong> &mdash; this is a game of glances, whispers, and break-room summons. Switch to <strong>Action Order</strong> only when the floor goes loud: a lockdown, a chase through the stairwell, the contingency going off.</p>
 <p><strong>Contests</strong> happen only against named GMCs &mdash; out-staring Milchick, lying to Cobel's face. You never roll against Lumon itself, the Board, or a department: those are systems, and systems are the <strong>Doom Pool</strong> and <strong>Crisis Pools</strong>.</p>
 
 <h3>The Nine (Doom Pool)</h3>
 <p>Lumon's doctrine, weaponized. The Doom Pool begins at <span class="die">d6</span> <span class="die">d6</span> and follows the standard rules &mdash; the GM adds a die on player opportunities (rolled 1s) &mdash; plus Severance-specific triggers:</p>
 <ul>
-  <li><strong>Grows</strong> when a PC challenges a Principle (step up the lowest die), when a shift ends with the File unrefined, when the Overtime Contingency is used, and after every Compunction.</li>
-  <li><strong>Spends</strong> to interrupt a scene with Management, to inflict temper stress directly (<em>Cobel's smile doesn't reach her eyes &mdash; take Dread stress</em>), to summon a PC to the Break Room or Wellness, to separate the party, or to reveal that a trusted routine was surveillance all along.</li>
+  <li><strong>Grows</strong> when a refiner challenges a Principle (step up the lowest die), when a shift ends with the File unrefined, when the Overtime Contingency is used, and after every Compunction.</li>
+  <li><strong>Spends</strong> to interrupt a scene with Management, to inflict temper stress directly (<em>Cobel's smile doesn't reach her eyes &mdash; take Dread stress</em>), to summon a refiner to the Break Room or Wellness, to separate the party, or to reveal that a trusted routine was surveillance all along.</li>
   <li><strong>Escalation:</strong> once the pool holds <span class="die">d10</span>s, the Board takes notice &mdash; new directives, new cameras, a visit. At <span class="die">d12</span> <span class="die">d12</span>, the endgame unlocks: the testing floor doors open, or the Board convenes, and the season turns.</li>
 </ul>
+
+<div class="pnote">nine tails. one for each principle. count them at the waffle party. <span class="sig">&mdash; P.</span></div>
 
 <h3>The Files (Crisis Pools) &mdash; Refinement</h3>
 <p>Each MDR file &mdash; <em>Cold Harbor</em>, <em>Allentown</em>, <em>Siena</em> &mdash; is a <strong>Crisis Pool</strong> (e.g. Cold Harbor: three <span class="die">d8</span>s). A shift is a <strong>Timed Test</strong>: each refiner acts once, assembling a pool of a Principle (Wit, Nimbleness, and &mdash; daringly &mdash; Wiles) plus Distinctions and Relationships for teamwork. Effect dice step the File down; when the pool is gone, the file is complete &mdash; and something is revealed: a name, a face, a set of numbers that sorts toward someone you know.</p>
 <p>Rolling a 1 while refining means the numbers got to you: take temper stress (GM's choice of Woe or Dread). This is the job's real wage.</p>
 
 <h3>The Four Tempers (Stress)</h3>
-<p>Emotional harm in this game lands on four stress tracks &mdash; Kier's <strong>Four Tempers</strong>: <strong>Woe</strong>, <strong>Frolic</strong>, <strong>Dread</strong>, <strong>Malice</strong>. Lumon teaches that these are weaknesses to be tamed; the game treats them as the proof you're still human. Each track steps <span class="die">d6</span> &rarr; <span class="die">d8</span> &rarr; <span class="die">d10</span> &rarr; <span class="die">d12</span>. At <span class="die">d10</span> or higher the temper visibly warps your behavior &mdash; roleplay it; everyone at the table can see the crack.</p>
+<p>Kier taught that every worker carries four tempers to be tamed &mdash; <strong>Woe</strong> (melancholy, grief, inward despair), <strong>Frolic</strong> (levity, aimless indulgence), <strong>Dread</strong> (paralysis, apprehension), <strong>Malice</strong> (spite, defiance). Lumon calls them weaknesses. This handbook notes, for the record, that they are also the proof you're still human.</p>
+<p>Each track steps <span class="die">d6</span> &rarr; <span class="die">d8</span> &rarr; <span class="die">d10</span> &rarr; <span class="die">d12</span>. At <span class="die">d10</span> or higher the temper visibly warps your behavior &mdash; roleplay it; everyone at the table can see the crack.</p>
 
-<div class="rulebox">
-  <div class="rlabel">COMPUNCTION</div>
-  <p>When a temper would step past <span class="die">d12</span>, the innie is <strong>summoned to the Break Room</strong>. Play the scene: the small room, the compunction statement read aloud, read again, read until it sounds true. When it's over, the temper resets to <span class="die">d6</span> &mdash; but the GM adds a <span class="die">d8</span> to the Doom Pool and steps <strong>down</strong> one of the PC's Principles. The doctrine corrects. It always collects its fee.</p>
+<div class="notice">
+  <div class="nlabel">COMPUNCTION</div>
+  <p>When a temper would step past <span class="die">d12</span>, the refiner is <strong>summoned to the Break Room</strong>. Play the scene: the small room, the statement on the monitor, read aloud, read again, read until it sounds true. When it's over, the temper resets to <span class="die">d6</span> &mdash; but the GM adds a <span class="die">d8</span> to the Doom Pool and steps <strong>down</strong> one of the refiner's Principles. The doctrine corrects. It always collects its fee.</p>
 </div>
 
+<div class="terminal">
+  <div class="tlabel">BREAK ROOM TERMINAL &middot; STATEMENT 001 &middot; READ ALOUD UNTIL SINCERE</div>
+  Forgive me for the harm I have caused this world. None may atone for my actions but me, and only in me shall their stain live on. I am thankful to have been caught, my fall cut short by those with wizened hands. All I can be is sorry, and that is all I am.<span class="cursor">&nbsp;&#9612;</span>
+</div>
+
+<div class="pnote">I read it 214 times. I counted. <span class="sig">&mdash; P.</span></div>
+
 <h3>The Break Room, Wellness, and the Carrot</h3>
-<p>The Break Room is the stick (above). <strong>Wellness sessions</strong> with Ms.&nbsp;Casey are the carrot: a PC who completes a wellness session steps <em>down</em> one temper of their choice &mdash; but Ms.&nbsp;Casey always asks one question she shouldn't be able to ask, about the outie's life. Answering truthfully creates an Asset for Management (the GM notes it); deflecting is a Contest. Nothing at Lumon is free.</p>
+<p>The Break Room is the stick (above). <strong>Wellness sessions</strong> with Ms.&nbsp;Casey are the carrot: a refiner who completes a wellness session steps <em>down</em> one temper of their choice &mdash; but Ms.&nbsp;Casey always asks one question she shouldn't be able to ask, about the outie's life. Answering truthfully creates an Asset for Management (the GM notes it); deflecting is a Contest. Nothing at Lumon is free.</p>
 <p><strong>Waffle parties and Music Dance Experiences</strong> work the same way at group scale: tempers step down across the department, and the Doom Pool grows a die. Joy, metered and priced.</p>
+<p class="genres">APPROVED GENRES: Bawdy funk &middot; Bouncy swing &middot; Buoyant reggae &middot; Defiant jazz &middot; Effusive ska &middot; Exalted choral &middot; Exciting rap &middot; Hootin tootin country &middot; Lofty orchestra &middot; Maximized rhythms &middot; Playful punk &middot; Reckless disco &middot; Spooky ambient &middot; Tearful emo &middot; Thoughtful grunge</p>
 
 <h3>The Overtime Contingency</h3>
 <p>Spend <strong>1 PP</strong> and add a <span class="die">d8</span> to the Doom Pool: <strong>flip the active relationship set for one scene</strong> &mdash; your outie wakes inside. Inside shuts down (the Limit: gain <strong>1 PP</strong>, so the contingency costs you a Doom die, not plot points); Outside comes online. Roll only outie-side traits &mdash; Outie distinction, free distinction, Outside relationships (and My Outie) &mdash; no Principles; the doctrine doesn't recognize this person. What the outie does with the body, the innie will never remember &mdash; unless someone was watching.</p>
 
+<div class="pnote">it works. that&rsquo;s the worst part. <span class="sig">&mdash; P.</span></div>
+
 <h3>Resignation Requests</h3>
 <p>Filing one is a Test against the Doom Pool. Success means the request reaches your outie. Whether the outie honors it &mdash; whether they even open it &mdash; is a scene for an Outie Interlude, and the GM is under no obligation to be kind.</p>
+<div class="tinynotice">FORM LUM-RES-002 &middot; AVAILABLE FROM YOUR SUPERVISOR &middot; ALLOW 6&ndash;8 WEEKS FOR PROCESSING &middot; WITHDRAWALS OF WITHDRAWALS ARE FINAL</div>
 
-<h2><span class="secnum">05 &middot; INTERLUDES</span>Outie Interludes &amp; Reintegration</h2>
+<h2><span class="secnum">CHAPTER 05</span>Beyond the Building</h2>
+<div class="epigraph">&ldquo;Your outie maintains a life beyond these walls so that you don&rsquo;t have to.&rdquo;<span class="attr">&mdash; ORIENTATION DAY REMARKS</span></div>
+
+<p>What follows is provided for context only. Do not romanticize it.</p>
 
 <h3>Outie Interludes</h3>
 <p>Between shifts, each player frames a short scene as their <strong>outie</strong> &mdash; the parking lot, the apartment, the support group for the severed. Outies assemble pools from <strong>Distinctions and Relationships only</strong>: no Principles. The doctrine doesn't live outside the building. The Inside set is shut down out here &mdash; only Outside relationships (and My Outie) are on the table.</p>
 <p>Discoveries made out here become <strong>Assets the innie finds without knowing why</strong>: <em>a note in your own handwriting &mdash;</em> don't trust the numbers <em>(&nbsp;<span class="die">d8</span>&nbsp;)</em>. The GM may also frame an interlude <em>against</em> the player: the outie considering quitting, the outie meeting someone reintegrated, the outie doing something the innie would hate them for. The two of you share a body and nothing else &mdash; act like it.</p>
 
-<h3>Reintegration (Growth Pool)</h3>
-<p>Use the <strong>Growth Pool</strong>. At session's end, nominate moments when the selves bled through &mdash; a memory that surfaced mid-shift, an outie dreaming the fluorescent halls. Spend growth to buy <strong>Bridges</strong>: a shared memory both selves can roll, written as a trait both halves of the character sheet can reach (<em>The Lake House, Age Nine</em> &mdash; <span class="die">d8</span>). Bridges are usable by innie <em>and</em> outie, Principles or no Principles. A Bridge ignores the Mutually Exclusive limit. The third Bridge frays the severance for good &mdash; that character's endgame has begun, and Lumon will do anything to stop it.</p>
+<div class="contraband">
+  <div class="clabel">&#9760; INSERTED PAGE &mdash; NOT PART OF THE OFFICIAL HANDBOOK</div>
+  <div class="pnote" style="margin-left: 6pt;">they tore this page out of every copy. I put it back. <span class="sig">&mdash; P.</span></div>
+  <h3 style="color:#BD2026;">Reintegration (Growth Pool)</h3>
+  <p>Use the <strong>Growth Pool</strong>. At session's end, nominate moments when the selves bled through &mdash; a memory that surfaced mid-shift, an outie dreaming the fluorescent halls. Spend growth to buy <strong>Bridges</strong>: a shared memory both selves can roll, written as a trait both halves of the character sheet can reach (<em>The Lake House, Age Nine</em> &mdash; <span class="die">d8</span>). Bridges are usable by innie <em>and</em> outie, Principles or no Principles. A Bridge ignores the Mutually Exclusive limit. The third Bridge frays the severance for good &mdash; that character's endgame has begun, and Lumon will do anything to stop it.</p>
+  <div style="text-align:center;"><span class="stamp red">CONTRABAND</span></div>
+</div>
 
-<h2><span class="secnum">06 &middot; LOADOUT</span>Mod Loadout</h2>
+<h2><span class="secnum">CHAPTER 06</span>Office Directory</h2>
+<div class="epigraph">&ldquo;You will find everything you need on the severed floor.&rdquo;<span class="attr">&mdash; ORIENTATION DAY REMARKS</span></div>
+
+<p><strong>Macrodata Refinement</strong> &mdash; your desks, your numbers, the eerie calm. <strong>Optics &amp; Design</strong> &mdash; poster presses, old departmental grudges, surprisingly good coffee. <strong>Mammalians Nurturable</strong> &mdash; the goats; ask no questions. <strong>The Break Room</strong> &mdash; small, quiet, the statement on the table. <strong>Wellness</strong> &mdash; Ms.&nbsp;Casey's room, blue like a held breath. <strong>The Perpetuity Wing</strong> &mdash; Kier's statue, the paintings, the Eagan lineage watching. <strong>The Exports Hall</strong> &mdash; you do not go there. <strong>The stairwell, the parking lot</strong> &mdash; where the selves change places and neither remembers the handoff.</p>
+<p><strong>Harmony Cobel</strong> believes &mdash; truly, terribly believes. <strong>Seth Milchick</strong> enforces with a smile that has read the manual on smiles. <strong>Ms.&nbsp;Casey</strong> asks how your outie is doing, and waits. <strong>The Board</strong> never appears; when it speaks, the speaker crackles and everyone stands a little straighter. Outies drift through interludes like weather: grieving, indebted, devout, desperate &mdash; each one the reason the innie exists and the threat that could end them.</p>
+
+<div class="tinynotice">IN CASE OF FIRE, REMAIN AT YOUR WORKSTATION. THE NUMBERS MUST NOT BE LEFT UNSUPERVISED. &middot; IN CASE OF FLOOD, SEE FIRE. &middot; IN CASE OF DEFIANT JAZZ, CONTACT YOUR SUPERVISOR IMMEDIATELY.</div>
+
+<h2><span class="secnum">APPENDIX A</span>Structural Compliance</h2>
+<div style="text-align:center;"><span class="stamp">MANAGEMENT EYES ONLY</span></div>
+
+<p>The following pages are restricted to Management personnel. If you are reading this without authorization, close the handbook and report to your supervisor. Your supervisor has been notified regardless.</p>
+
+<div class="pnote">this page is for them. read it anyway. <span class="sig">&mdash; P.</span></div>
 
 <div class="modlist">
   <h4>TRAIT &amp; TRAIT MODS</h4>
@@ -357,7 +568,7 @@
     <li>Trait Statements (on Principles)</li>
   </ul>
   <h4>CHARACTER CREATION</h4>
-  <ul><li>Scratch-Built (7 steps)</li></ul>
+  <ul><li>Scratch-Built (7 steps) &mdash; see <strong>Chapter 03: Intake &amp; Calibration</strong></li></ul>
   <h4>GROWING CHARACTERS</h4>
   <ul><li>Growth Pool &mdash; as <strong>Reintegration</strong> (Bridges)</li></ul>
   <h4>CONFLICTS &amp; CONFLICT MODS</h4>
@@ -386,14 +597,14 @@
   </ul>
 </div>
 
-<h2><span class="secnum">07 &middot; THE FLOOR</span>The Severed Floor</h2>
+<h2><span class="secnum">APPENDIX B</span>Personnel Files</h2>
+<div class="epigraph">&ldquo;Exemplary conduct will be recognized. All other conduct will also be recognized.&rdquo;<span class="attr">&mdash; OFFICE OF CULTURE &amp; COMPLIANCE</span></div>
 
-<p><strong>Macrodata Refinement</strong> &mdash; your desks, your numbers, the eerie calm. <strong>Optics &amp; Design</strong> &mdash; poster presses, old departmental grudges, surprisingly good coffee. <strong>Mammalians Nurturable</strong> &mdash; the goats; ask no questions. <strong>The Break Room</strong> &mdash; small, quiet, the statement on the table. <strong>Wellness</strong> &mdash; Ms.&nbsp;Casey's room, blue like a held breath. <strong>The Perpetuity Wing</strong> &mdash; Kier's statue, the paintings, the Eagan lineage watching. <strong>The Exports Hall</strong> &mdash; you do not go there. <strong>The stairwell, the parking lot</strong> &mdash; where the selves change places and neither remembers the handoff.</p>
-<p><strong>Harmony Cobel</strong> believes &mdash; truly, terribly believes. <strong>Seth Milchick</strong> enforces with a smile that has read the manual on smiles. <strong>Ms.&nbsp;Casey</strong> asks how your outie is doing, and waits. <strong>The Board</strong> never appears; when it speaks, the speaker crackles and everyone stands a little straighter. Outies drift through interludes like weather: grieving, indebted, devout, desperate &mdash; each one the reason the innie exists and the threat that could end them.</p>
+<p>The refiners below have been recognized for exemplary conduct. Emulate them.</p>
 
-<h2><span class="secnum">08 &middot; SAMPLES</span>Sample Characters</h2>
-
-<div class="charcard">
+<div class="personnel">
+  <div class="pfilehead">PERSONNEL FILE &middot; REF-MDR-0117 &middot; CLEARANCE: SEVERED FLOOR</div>
+  <img class="filephoto" src="portraits/sol.png" alt="File photo: Sol W.">
   <div class="cname">Sol W.</div>
   <div class="crole">MACRODATA REFINEMENT &middot; INNIE, SECOND YEAR</div>
   <dl>
@@ -401,12 +612,16 @@
     <dt>Distinctions</dt><dd><em>My Outie Drowned Someone</em> (outie) <span class="die">d8</span> &middot; <em>The Friendliest Refiner on the Floor</em> (innie) <span class="die">d8</span> &middot; <em>I Laugh When I Shouldn't</em> (free) <span class="die">d8</span></dd>
     <dt>Principles</dt><dd>Cheer <span class="die">d10</span> <span class="doctrine">"Grief is just cheer, misfiled."</span> &middot; Benevolence <span class="die">d10</span> &middot; Wiles <span class="die">d6</span> &middot; Probity <span class="die">d6</span> &middot; all others <span class="die">d8</span></dd>
     <dt>Relationships</dt><dd><strong>Inside:</strong> Ana R. <span class="die">d10</span> &middot; Ms.&nbsp;Casey <span class="die">d8</span> &middot; rest <span class="die">d6</span> &mdash; <strong>Outside:</strong> <span class="die">d8</span> &middot; rest <span class="die">d6</span> &mdash; <strong>My Outie</strong> <span class="die">d8</span> (never shuts down)</dd>
-    <dt>Signature Asset</dt><dd><em>A ferry token in my desk drawer, warm some mornings</em> <span class="die">d8</span></dd>
+    <dt>Personal Effect</dt><dd><em>A ferry token in my desk drawer, warm some mornings</em> <span class="die">d8</span></dd>
     <dt>Secret</dt><dd>His outie has started leaving him messages &mdash; and the latest one says <em>don't refine Cold Harbor</em>.</dd>
   </dl>
 </div>
 
-<div class="charcard">
+<div class="pnote">he reminds me of someone I used to know. be kind to him. <span class="sig">&mdash; P.</span></div>
+
+<div class="personnel">
+  <div class="pfilehead">PERSONNEL FILE &middot; REF-MDR-0089 &middot; CLEARANCE: SEVERED FLOOR</div>
+  <img class="filephoto" src="portraits/ana.png" alt="File photo: Ana R.">
   <div class="cname">Ana R.</div>
   <div class="crole">MACRODATA REFINEMENT &middot; INNIE, FOURTH YEAR</div>
   <dl>
@@ -414,16 +629,17 @@
     <dt>Distinctions</dt><dd><em>My Outie Tithes to Kier</em> (outie) <span class="die">d8</span> &middot; <em>I Ask the Questions No One Asks</em> (innie) <span class="die">d8</span> &middot; <em>A Mind Like a Snare</em> (free) <span class="die">d8</span></dd>
     <dt>Principles</dt><dd>Humility <span class="die">d10</span> <span class="doctrine">"I am the smallest thing in Kier's house."</span> &middot; Probity <span class="die">d10</span> &middot; Cheer <span class="die">d6</span> &middot; Verve <span class="die">d6</span> &middot; all others <span class="die">d8</span></dd>
     <dt>Relationships</dt><dd><strong>Inside:</strong> Sol W. <span class="die">d10</span> &middot; Seth Milchick <span class="die">d8</span> (fear counts) &middot; rest <span class="die">d6</span> &mdash; <strong>Outside:</strong> <span class="die">d8</span> &middot; rest <span class="die">d6</span> &mdash; <strong>My Outie</strong> <span class="die">d8</span> (never shuts down)</dd>
-    <dt>Signature Asset</dt><dd><em>Pages of</em> The You You Are <em>copied by hand, hidden in a ceiling tile</em> <span class="die">d8</span></dd>
+    <dt>Personal Effect</dt><dd><em>Pages of</em> The You You Are <em>copied by hand, hidden in a ceiling tile</em> <span class="die">d8</span></dd>
     <dt>Secret</dt><dd>She has started keeping a list of everything Wellness asks about her outie &mdash; and the list is getting long.</dd>
   </dl>
 </div>
 
-<h2><span class="secnum">09 &middot; SESSION ONE</span>Session One: Orientation</h2>
+<h2><span class="secnum">FINAL SECTION</span>Orientation Day</h2>
+<div class="epigraph">&ldquo;Your first day follows the schedule below. Deviations will be noted.&rdquo;<span class="attr">&mdash; OFFICE OF CULTURE &amp; COMPLIANCE</span></div>
 
-<p><strong>Situation.</strong> A new file, <strong>COLD HARBOR</strong>, has landed in Macrodata Refinement with a quota and a deadline. Management announces a "wellness initiative": mandatory sessions for all refiners. And Petra D., the department's senior refiner, hasn't come back from the Break Room &mdash; it's been three days, and her desk is exactly as she left it. The PCs are the refiners left holding the file.</p>
+<p><strong>Situation.</strong> A new file, <strong>COLD HARBOR</strong>, has landed in Macrodata Refinement with a quota and a deadline. Management announces a "wellness initiative": mandatory sessions for all refiners. And Petra D., the department's senior refiner, hasn't come back from the Break Room &mdash; it's been three days, and her desk is exactly as she left it. The refiners are the ones left holding the file.</p>
 
-<p><strong>Reveals</strong> (one per PC, plus the floor):</p>
+<p><strong>Reveals</strong> (one per refiner, plus the floor):</p>
 <ul>
   <li><em>For the new hire:</em> the orientation video addresses you by a name that isn't yours &mdash; then corrects itself. No one else reacts.</li>
   <li><em>For the veteran:</em> the numbers in Cold Harbor sort toward a face you almost recognize. Roll Woe or look away.</li>
@@ -434,12 +650,19 @@
 <p><strong>Opening scenes:</strong></p>
 <ol>
   <li><strong>The video.</strong> Kier's voice over the Perpetuity Wing tour: the Nine Principles recited like scripture. Each player states which principle their innie clings to &mdash; and which one already itches.</li>
-  <li><strong>First shift.</strong> Cold Harbor on the screens (Crisis Pool, three <span class="die">d8</span>s). Refine. The numbers feel wrong for exactly one PC &mdash; their choice which, and why.</li>
-  <li><strong>The summons.</strong> Split the party: one PC to Wellness (Ms.&nbsp;Casey, one impossible question), one to the Break Room (Petra D.'s chair is still warm). The rest watch the hallway and learn what surveillance feels like.</li>
+  <li><strong>First shift.</strong> Cold Harbor on the screens (Crisis Pool, three <span class="die">d8</span>s). Refine. The numbers feel wrong for exactly one refiner &mdash; their choice which, and why.</li>
+  <li><strong>The summons.</strong> Split the party: one refiner to Wellness (Ms.&nbsp;Casey, one impossible question), one to the Break Room (Petra D.'s chair is still warm). The rest watch the hallway and learn what surveillance feels like.</li>
 </ol>
 
-<div class="finenote">
-  SEVERANCE PRIMED is a basis document &mdash; the playable core of a Cortex Prime adaptation of <em>Severance</em>, built on Kier Eagan's Nine Principles. Expand with a trait-halo character sheet (the innie/outie split begs for one), department playbooks, and a full season arc toward Cold Harbor's completion. Remember the show's rule, which is this game's rule too: <span class="doctrine">the work is mysterious and important.</span>
+<div class="pnote">on my first day the video said my name too. I never told them it did. <span class="sig">&mdash; P.</span></div>
+
+<!-- ================= BACK COVER ================= -->
+<div class="backcover">
+  <svg class="droplet" viewBox="0 0 100 140"><path d="M50 4 C50 4 12 66 12 96 A38 38 0 0 0 88 96 C88 66 50 4 50 4 Z" fill="#F4F6F5"/></svg>
+  <div class="praise">PRAISE KIER</div>
+  <div class="motto">REMEDIUM HOMINIBUS</div>
+  <div class="trans">&ldquo;A Cure for Mankind&rdquo;</div>
+  <div class="addr">LUMON INDUSTRIES &middot; KIER, PE<br><br>DOC. NO. LUM-MDR-0047 &middot; REV. 12</div>
 </div>
 
 </body>
