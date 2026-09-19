@@ -24,7 +24,7 @@
 
   @page {
     size: letter;
-    margin: 0.95in 0.85in 1.05in 0.85in;
+    margin: 0.9in 2.0in 1.0in 0.9in;
     background: #F4F6F5;
     @top-center {
       content: "LUMON INDUSTRIES · HANDBOOK FOR THE SEVERED EMPLOYEE";
@@ -182,17 +182,34 @@
   }
   .terminal .cursor { color: #15DDCE; }
 
-  /* ---------- contraband: P.'s hand ---------- */
+  /* ---------- contraband: P.'s hand ----------
+     Absolutely-positioned overlays parked in the wide right margin. Each
+     note anchors vertically at its static position in the flow — right
+     beside the passage it annotates — but takes up no space, so the
+     printed text runs on uninterrupted beneath it. */
   .pnote {
-    font-family: "Caveat"; font-weight: 600; font-size: 13.5pt; line-height: 1.35;
+    position: absolute;
+    width: 1.6in;
+    right: -1.82in;
+    margin: 0;
+    font-family: "Caveat"; font-weight: 600; font-size: 12.5pt; line-height: 1.32;
     color: #BD2026; background: #fffdf6;
     border: 1pt solid #e5cfcf; border-top: 7pt solid rgba(189,32,38,0.16);
-    padding: 6pt 12pt 9pt 12pt; margin: 14pt 6pt 14pt 30pt;
-    transform: rotate(-0.9deg);
+    padding: 5pt 10pt 7pt 10pt;
+    transform: rotate(-1.1deg);
     box-shadow: 2pt 3pt 0 rgba(30,58,126,0.08);
-    page-break-inside: avoid; text-align: left;
+    text-align: left;
   }
   .pnote .sig { font-size: 11pt; }
+  /* The cover note is pinned to the cover composition itself, not the page margin. */
+  .cover .pnote {
+    right: 0.75in;
+    bottom: 1.15in;
+    top: auto;
+    width: 2.35in;
+    font-size: 12pt;
+    transform: rotate(-2deg);
+  }
   .contraband {
     border: 2pt dashed #BD2026; background: #fff;
     padding: 14pt 14pt 12pt 14pt; margin: 16pt 0; page-break-inside: avoid;
@@ -326,7 +343,7 @@
     </div>
     <p class="praise">PRAISE KIER</p>
   </div>
-  <div class="pnote" style="margin: 0 1.2in; font-size: 12pt;">they gave me this on my first day. I believed every word. <span class="sig">&mdash; P.</span></div>
+  <div class="pnote">they gave me this on my first day. I believed every word. <span class="sig">&mdash; P.</span></div>
   <div style="height: 0.35in;"></div>
   <div class="banner">REMEDIUM HOMINIBUS &middot; A CURE FOR MANKIND</div>
 </div>
@@ -537,7 +554,7 @@
 
 <div class="contraband">
   <div class="clabel">&#9760; INSERTED PAGE &mdash; NOT PART OF THE OFFICIAL HANDBOOK</div>
-  <div class="pnote" style="margin-left: 6pt;">they tore this page out of every copy. I put it back. <span class="sig">&mdash; P.</span></div>
+  <div class="pnote">they tore this page out of every copy. I put it back. <span class="sig">&mdash; P.</span></div>
   <h3 style="color:#BD2026;">Reintegration (Growth Pool)</h3>
   <p>Use the <strong>Growth Pool</strong>. At session's end, nominate moments when the selves bled through &mdash; a memory that surfaced mid-shift, an outie dreaming the fluorescent halls. Spend growth to buy <strong>Bridges</strong>: a shared memory both selves can roll, written as a trait both halves of the character sheet can reach (<em>The Lake House, Age Nine</em> &mdash; <span class="die">d8</span>). Bridges are usable by innie <em>and</em> outie, Principles or no Principles. A Bridge ignores the Mutually Exclusive limit. The third Bridge frays the severance for good &mdash; that character's endgame has begun, and Lumon will do anything to stop it.</p>
   <div style="text-align:center;"><span class="stamp red">CONTRABAND</span></div>
