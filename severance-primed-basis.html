@@ -24,7 +24,7 @@
 
   @page {
     size: letter;
-    margin: 0.9in 2.0in 1.0in 0.9in;
+    margin: 0.95in 0.85in 1.05in 0.85in;
     background: #F4F6F5;
     @top-center {
       content: "LUMON INDUSTRIES · HANDBOOK FOR THE SEVERED EMPLOYEE";
@@ -183,24 +183,26 @@
   .terminal .cursor { color: #15DDCE; }
 
   /* ---------- contraband: P.'s hand ----------
-     Absolutely-positioned overlays parked in the wide right margin. Each
-     note anchors vertically at its static position in the flow — right
-     beside the passage it annotates — but takes up no space, so the
-     printed text runs on uninterrupted beneath it. */
+     Absolutely-positioned overlays. The layout makes NO accommodation for
+     them: they crowd onto the page as-is, overlapping the text column's
+     right edge and the margin like real scribbles that ran out of room.
+     Each note anchors vertically at its static position in the flow —
+     right beside the passage it annotates — but takes up no space, so
+     the printed text runs on uninterrupted beneath it. */
   .pnote {
     position: absolute;
-    width: 1.6in;
-    right: -1.82in;
+    width: 1.35in;
+    right: -0.72in;
     margin: 0;
-    font-family: "Caveat"; font-weight: 600; font-size: 12.5pt; line-height: 1.32;
+    font-family: "Caveat"; font-weight: 600; font-size: 11.5pt; line-height: 1.3;
     color: #BD2026; background: #fffdf6;
     border: 1pt solid #e5cfcf; border-top: 7pt solid rgba(189,32,38,0.16);
-    padding: 5pt 10pt 7pt 10pt;
-    transform: rotate(-1.1deg);
+    padding: 5pt 8pt 6pt 8pt;
+    transform: rotate(-1.6deg);
     box-shadow: 2pt 3pt 0 rgba(30,58,126,0.08);
     text-align: left;
   }
-  .pnote .sig { font-size: 11pt; }
+  .pnote .sig { font-size: 10pt; }
   /* The cover note is pinned to the cover composition itself, not the page margin. */
   .cover .pnote {
     right: 0.75in;
