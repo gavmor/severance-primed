@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Severance Primed — Character Sheet (blank)</title>
+<style>
+  @font-face {
+    font-family: "CortexSymbology";
+    src: url("fonts/CortexSymbology-Regular.ttf");
+  }
+  @page {
+    size: letter;
+    margin: 0.4in 0.65in;
+    @bottom-center {
+      content: "SEVERANCE PRIMED · character sheet — photocopy freely";
+      font-family: "Noto Sans Mono", monospace;
+      font-size: 7pt;
+      letter-spacing: 0.14em;
+      color: #8a94a6;
+    }
+  }
+  @page :first { @bottom-center { content: none; } }
+  body {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 9pt;
+    line-height: 1.4;
+    color: #1a1f2b;
+  }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .sym { font-family: "CortexSymbology"; font-style: normal; }
+  .navy { color: #16324f; }
+  .umber { color: #9a5b3c; }
+
+  /* ---------- plain title header (no halo: halos are for pregens) ---------- */
+  .sheethead {
+    text-align: center;
+    border-top: 5px solid #16324f;
+    border-bottom: 2px solid #16324f;
+    padding: 12pt 0 8pt;
+    margin-bottom: 8pt;
+  }
+  .sh-kicker {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 8pt; letter-spacing: 0.26em; color: #3d6b99;
+    margin-bottom: 4pt;
+  }
+  .sh-title {
+    font-family: "Noto Serif Display", "Noto Serif", serif;
+    font-size: 26pt; font-weight: 900; color: #101828; line-height: 1.1;
+  }
+  .tag { text-align: center; font-size: 7.5pt; font-style: italic; color: #6b7488; margin: 6pt 0 0; }
+
+  /* ---------- sheet furniture ---------- */
+  h3 {
+    font-family: "Noto Sans", sans-serif; font-size: 9pt; font-weight: bold;
+    letter-spacing: 0.12em; text-transform: uppercase; color: #16324f;
+    border-bottom: 1.5pt solid #16324f; padding-bottom: 2pt;
+    margin: 4pt 0 3pt;
+  }
+  h3 .hint { font-weight: normal; letter-spacing: 0; text-transform: none; color: #6b7488; font-size: 8pt; font-family: "Noto Serif", serif; }
+  table { width: 100%; border-collapse: collapse; }
+  td, th { vertical-align: top; padding: 1.5pt 4pt; }
+  .field td { border-bottom: 1px dotted #b9c6d8; }
+  .lbl {
+    font-family: "Noto Sans Mono", monospace; font-size: 7.5pt;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #3d6b99; font-weight: bold;
+  }
+  .line { border-bottom: 1px solid #8a94a6; min-height: 10pt; }
+  .trait { font-weight: bold; color: #16324f; }
+  .cb { font-family: "DejaVu Sans", sans-serif; font-size: 9pt; }
+  .diek { font-family: "CortexSymbology"; font-size: 10pt; }
+  .pip { font-size: 13pt; letter-spacing: 2pt; }
+  .note { font-size: 7.8pt; color: #6b7488; font-style: italic; }
+  .quote {
+    border-left: 3pt solid #9a5b3c; padding-left: 10pt; font-style: italic;
+    color: #3a4356; margin: 10pt 0 0;
+  }
+  .legend { font-size: 7.8pt; color: #6b7488; margin-top: 8pt; }
+  .principles td { padding: 1pt 4pt; }
+  .principles .line { min-height: 9pt; }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 : THE INNIE ================= -->
+<div class="page">
+
+<div class="sheethead">
+  <div class="sh-kicker">SEVERANCE PRIMED · CORTEX PRIME</div>
+  <div class="sh-title">Character Sheet</div>
+  <p class="tag">Fill in pencil. You are two people, and only one of them is free.</p>
+</div>
+
+<table class="field">
+  <tr>
+    <td style="width:37%"><span class="lbl navy">Innie name</span><div class="line"></div></td>
+    <td style="width:33%"><span class="lbl umber">Outie name <span style="font-weight:normal">(if known)</span></span><div class="line"></div></td>
+    <td><span class="lbl">Department</span><div class="line"></div></td>
+  </tr>
+  <tr>
+    <td colspan="3"><span class="lbl">Outie's reason for severance</span> <span class="note">— one sentence; the table hears it</span><div class="line"></div></td>
+  </tr>
+</table>
+
+<h3>The Nine Principles <span class="hint">— all start <span class="sym">&#x2467;</span>; step two up, two down; write a statement for each</span></h3>
+<table class="field principles" style="font-size:8.2pt;">
+  <tr><td style="width:17%"><span class="trait">Vision</span></td><td style="width:30%"><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Verve</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Wit</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Cheer</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Humility</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Benevolence</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Nimbleness</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Probity</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="trait">Wiles</span></td><td><span class="cb">☐</span><span class="diek">&#x2463;</span> <span class="cb">☐</span><span class="diek">&#x2465;</span> <span class="cb">☐</span><span class="diek">&#x2467;</span> <span class="cb">☐</span><span class="diek">&#x2469;</span> <span class="cb">☐</span><span class="diek">&#x246b;</span></td><td><div class="line"></div></td></tr>
+</table>
+<p class="note"><strong>Uphold</strong> at cost: step up for the scene. <strong>Challenge</strong> to act free: gain 1 <span class="sym">&#x24c5;</span> — the GM steps up the Doom Pool. <span style="color:#16324f;">Lumon notices.</span></p>
+
+<h3>Distinctions <span class="hint">— three at <span class="sym">&#x2467;</span>; hinder: roll <span class="sym">&#x2463;</span> instead, gain 1 <span class="sym">&#x24c5;</span></span></h3>
+<table class="field">
+  <tr><td style="width:14%"><span class="lbl umber">Outie</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="lbl navy">Innie</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="lbl">Free</span></td><td><div class="line"></div></td></tr>
+</table>
+
+<h3>Relationships</h3>
+<table class="field">
+  <tr><td style="width:12%"><span class="diek navy">&#x2469;</span></td><td><span class="lbl">Fellow innie I trust</span><div class="line"></div></td></tr>
+  <tr><td><span class="diek navy">&#x2467;</span></td><td><span class="lbl">My Outie</span><div class="line"></div></td></tr>
+  <tr><td><span class="diek navy">&#x2467;</span></td><td><span class="lbl">Coworker · outie-life · Management</span> <span class="note">(circle one)</span><div class="line"></div></td></tr>
+  <tr><td><span class="diek navy">&#x2465;</span></td><td><span class="note">everyone else — the department, the Eagans as an idea, the Board as a rumor</span><div class="line"></div></td></tr>
+</table>
+
+<h3>Signature Asset <span class="hint">— <span class="sym">&#x2467;</span> · hidden where?</span></h3>
+<table class="field"><tr><td style="width:60%"><div class="line"></div></td><td><span class="lbl">Hidden</span><div class="line"></div></td></tr></table>
+
+<h3>The Four Tempers <span class="hint">— stress; past <span class="sym">&#x246b;</span> → Compunction in the Break Room</span></h3>
+<table class="field">
+  <tr><td style="width:16%"><span class="trait">Woe</span></td><td><span class="pip">○ ○ ○ ○</span> <span class="note"><span class="sym">&#x2465; &#x2467; &#x2469; &#x246b;</span></span></td><td style="width:16%"><span class="trait">Frolic</span></td><td><span class="pip">○ ○ ○ ○</span> <span class="note"><span class="sym">&#x2465; &#x2467; &#x2469; &#x246b;</span></span></td></tr>
+  <tr><td><span class="trait">Dread</span></td><td><span class="pip">○ ○ ○ ○</span> <span class="note"><span class="sym">&#x2465; &#x2467; &#x2469; &#x246b;</span></span></td><td><span class="trait">Malice</span></td><td><span class="pip">○ ○ ○ ○</span> <span class="note"><span class="sym">&#x2465; &#x2467; &#x2469; &#x246b;</span></span></td></tr>
+</table>
+
+</div>
+
+<!-- ================= PAGE 2 : THE OUTIE ================= -->
+<div class="page">
+
+<h3>My Secret <span class="hint">— tell the GM, not necessarily the table</span></h3>
+<table class="field"><tr><td><div class="line"></div></td></tr></table>
+
+<h3 style="border-color:#9a5b3c; color:#9a5b3c;">The Outie <span class="hint">— interludes: Distinctions + Relationships only; no Principles outside the building</span></h3>
+<table class="field">
+  <tr><td><span class="lbl" style="color:#9a5b3c;">What my outie's life looks like</span><div class="line" style="min-height:20pt;"></div></td></tr>
+  <tr><td><span class="lbl" style="color:#9a5b3c;">People my outie knows (that I don't)</span><div class="line" style="min-height:20pt;"></div></td></tr>
+</table>
+
+<h3 style="border-color:#9a5b3c; color:#9a5b3c;">Messages from Myself <span class="hint">— assets my innie finds without knowing why · <span class="sym">&#x2467;</span> each</span></h3>
+<table class="field">
+  <tr><td style="width:8%"><span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+</table>
+
+<h3>Reintegration — Bridges <span class="hint">— growth buys these; the third frays the severance for good</span></h3>
+<table class="field">
+  <tr><td style="width:14%"><span class="lbl">Bridge I</span> <span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="lbl">Bridge II</span> <span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+  <tr><td><span class="lbl">Bridge III</span> <span class="cb">☐</span></td><td><div class="line"></div></td></tr>
+</table>
+<p class="note">A Bridge is a shared memory both selves can roll (<span class="sym">&#x2467;</span>). Write it so either of you would recognize it.</p>
+
+<h3>What Lumon Knows About Me <span class="hint">— complications Management is holding</span></h3>
+<table class="field">
+  <tr><td style="width:70%"><div class="line"></div></td><td><span class="lbl">Die</span> ______</td></tr>
+  <tr><td><div class="line"></div></td><td><span class="lbl">Die</span> ______</td></tr>
+  <tr><td><div class="line"></div></td><td><span class="lbl">Die</span> ______</td></tr>
+</table>
+
+<h3>The File I'm Refining</h3>
+<table class="field">
+  <tr><td style="width:45%"><span class="lbl">File name</span><div class="line"></div></td><td><span class="lbl">Progress</span><div style="min-height:11pt;"><span class="cb" style="font-size:13pt;">☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</span></div></td></tr>
+  <tr><td colspan="2"><span class="lbl">What the numbers are starting to look like</span><div class="line"></div></td></tr>
+</table>
+
+<h3>Compunctions Endured <span class="hint">— the Break Room collects its fee</span></h3>
+<p><span class="cb" style="font-size:14pt;">☐ ☐ ☐ ☐ ☐ ☐</span> <span class="note">each one: temper resets to <span class="sym">&#x2465;</span>, Doom Pool gains <span class="sym">&#x2467;</span>, one Principle steps down</span></p>
+
+<h3>Plot Points</h3>
+<p><span class="sym" style="font-size:13pt;">&#x24c5;</span> <span class="cb" style="font-size:13pt;">☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</span></p>
+
+<div class="quote">“The work is mysterious and important.”<br><span style="font-size:8pt;">— and so are you, whichever one of you is reading this.</span></div>
+
+<p class="legend"><strong>Dice:</strong> <span class="sym">&#x2463; &#x2465; &#x2467; &#x2469; &#x246b;</span> = d4 d6 d8 d10 d12 &nbsp;·&nbsp; <span class="sym">&#x24c5;</span> = plot point &nbsp;·&nbsp; <strong>Overtime Contingency:</strong> spend 1 <span class="sym">&#x24c5;</span>, add <span class="sym">&#x2467;</span> to the Doom Pool — your outie wakes inside for one scene.</p>
+
+</div>
+
+</body>
+</html>
