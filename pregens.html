@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Severance Primed — Pregen Trait-Halo Sheets</title>
+<style>
+  @font-face {
+    font-family: "CortexSymbology";
+    src: url("fonts/CortexSymbology-Regular.ttf");
+  }
+  @page {
+    size: letter;
+    margin: 0.45in 0.65in;
+    @bottom-center {
+      content: "SEVERANCE PRIMED · pregen trait-halo — the ring shows this character's actual ratings";
+      font-family: "Noto Sans Mono", monospace;
+      font-size: 7pt;
+      letter-spacing: 0.12em;
+      color: #8a94a6;
+    }
+  }
+  @page :first { @bottom-center { content: none; } }
+  body {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 9pt;
+    line-height: 1.4;
+    color: #1a1f2b;
+  }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .sym { font-family: "CortexSymbology"; font-style: normal; }
+  .navy { color: #16324f; }
+  .umber { color: #9a5b3c; }
+
+  /* ---------- true trait-halo: the ring IS the character's Nine Principles ---------- */
+  .halo { position: relative; width: 2.2in; height: 2.2in; margin: 0.12in auto 0.32in; }
+  .ringfull {
+    position: absolute; left: 4%; right: 4%; top: 4%; bottom: 4%;
+    border: 2.5pt solid #16324f; border-radius: 50%; z-index: 2;
+    box-sizing: border-box;
+  }
+  .divider {
+    position: absolute; left: 50%; top: 10%; bottom: 10%;
+    width: 1pt; background: #c3ccd9; margin-left: -0.5pt; z-index: 2;
+  }
+  .rdie {
+    position: absolute; transform: translate(-50%, -50%);
+    width: 0.34in; height: 0.34in; z-index: 3;
+  }
+  .rdie span.dback, .rdie span.dfront {
+    position: absolute; left: 0; right: 0; top: 0;
+    font-family: "CortexSymbology"; font-style: normal;
+    text-align: center; line-height: 0.34in;
+  }
+  .dback { font-size: 22.5pt; color: #fff; }
+  .dfront { font-size: 19pt; }
+  .dnum {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 0.13in; height: 0.13in; background: #fff; border-radius: 50%;
+  }
+  .portrait {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 1.99in; height: 1.99in; border-radius: 50%; z-index: 1;
+  }
+  .plabel {
+    position: absolute; font-family: "Noto Sans", sans-serif; font-weight: bold;
+    font-size: 6pt; letter-spacing: 0.08em; text-transform: uppercase;
+    white-space: nowrap; line-height: 1.2;
+  }
+  .pg-cap { text-align: center; margin: 2pt 0 6pt; }
+  .pg-name {
+    font-family: "Noto Serif Display", "Noto Serif", serif;
+    font-size: 17pt; font-weight: 900; color: #101828; line-height: 1.1;
+  }
+  .pg-sub {
+    font-family: "Noto Sans Mono", monospace; font-size: 7pt;
+    letter-spacing: 0.16em; color: #3d6b99; margin-top: 3pt; text-transform: uppercase;
+  }
+
+  /* ---------- furniture ---------- */
+  h3 {
+    font-family: "Noto Sans", sans-serif; font-size: 9pt; font-weight: bold;
+    letter-spacing: 0.12em; text-transform: uppercase; color: #16324f;
+    border-bottom: 1.5pt solid #16324f; padding-bottom: 2pt;
+    margin: 6pt 0 3pt;
+  }
+  h3 .hint { font-weight: normal; letter-spacing: 0; text-transform: none; color: #6b7488; font-size: 8pt; font-family: "Noto Serif", serif; }
+  .reason { font-size: 8.6pt; color: #3a4356; margin: 0 0 2pt; }
+  .reason .lbl { color: #9a5b3c; }
+  .lbl {
+    font-family: "Noto Sans Mono", monospace; font-size: 7.5pt;
+    letter-spacing: 0.1em; text-transform: uppercase; color: #3d6b99; font-weight: bold;
+  }
+  .stmts { columns: 2; column-gap: 18pt; font-size: 7.6pt; line-height: 1.5; margin: 2pt 0 0; }
+  .stmts div { break-inside: avoid; margin-bottom: 1pt; }
+  .stmts .trait { font-weight: bold; color: #16324f; }
+  .stmts em { color: #3a4356; }
+  .frow { font-size: 8.8pt; margin: 0 0 3pt; padding-bottom: 2pt; border-bottom: 1px dotted #d7dee9; }
+  .frow em { color: #1a1f2b; }
+  .frow .lbl { margin-right: 4pt; }
+  .diek { font-family: "CortexSymbology"; font-size: 10pt; }
+  .pip { font-size: 13pt; letter-spacing: 2pt; }
+  .note { font-size: 7.8pt; color: #6b7488; font-style: italic; }
+  .tempers { font-size: 8.8pt; margin-top: 2pt; }
+  .tempers .trait { font-weight: bold; color: #16324f; }
+  .reminder {
+    margin-top: 6pt; padding-top: 5pt; border-top: 1px solid #d7dee9;
+    font-size: 7.8pt; color: #6b7488; font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= SOL W. ================= -->
+<div class="page">
+
+<div class="halo">
+  <div class="ringfull"></div>
+  <div class="divider"></div>
+  <img class="portrait" src="file:///home/hatch/workspace/severance-primed/portraits/sol.png">
+  <span class="rdie" style="left:50%; top:4%;"><span class="dback">&#x2469;</span><span class="dnum"></span><span class="dfront navy">&#x2469;</span></span><span class="plabel" style="left:50%; top:-10%; transform:translate(-50%,-50%); text-align:center; color:#16324f;">Benevolence</span>
+  <span class="rdie" style="left:79.6%; top:14.8%;"><span class="dback">&#x2469;</span><span class="dnum"></span><span class="dfront umber">&#x2469;</span></span><span class="plabel" style="left:88.6%; top:4%; transform:translate(0,-50%); text-align:left; color:#9a5b3c;">Cheer</span>
+  <span class="rdie" style="left:95.3%; top:42%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront umber">&#x2467;</span></span><span class="plabel" style="left:109.1%; top:39.6%; transform:translate(0,-50%); text-align:left; color:#9a5b3c;">Humility</span>
+  <span class="rdie" style="left:89.8%; top:73%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront umber">&#x2467;</span></span><span class="plabel" style="left:102%; top:80%; transform:translate(0,-50%); text-align:left; color:#9a5b3c;">Nimbleness</span>
+  <span class="rdie" style="left:65.7%; top:93.2%;"><span class="dback">&#x2465;</span><span class="dnum"></span><span class="dfront umber">&#x2465;</span></span><span class="plabel" style="left:70.5%; top:106.4%; transform:translate(-50%,-50%); text-align:center; color:#9a5b3c;">Probity</span>
+  <span class="rdie" style="left:34.3%; top:93.2%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:29.5%; top:106.4%; transform:translate(-50%,-50%); text-align:center; color:#16324f;">Verve</span>
+  <span class="rdie" style="left:10.2%; top:73%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:-2%; top:80%; transform:translate(-100%,-50%); text-align:right; color:#16324f;">Vision</span>
+  <span class="rdie" style="left:4.7%; top:42%;"><span class="dback">&#x2465;</span><span class="dnum"></span><span class="dfront navy">&#x2465;</span></span><span class="plabel" style="left:-9.1%; top:39.6%; transform:translate(-100%,-50%); text-align:right; color:#16324f;">Wiles</span>
+  <span class="rdie" style="left:20.4%; top:14.8%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:11.4%; top:4%; transform:translate(-100%,-50%); text-align:right; color:#16324f;">Wit</span>
+</div>
+<div class="pg-cap">
+  <div class="pg-name">Sol W.</div>
+  <div class="pg-sub">Innie · Macrodata Refinement · 2nd year</div>
+</div>
+
+<p class="reason"><span class="lbl">Outie's reason —</span> <em>Severed after the ferry accident he blames himself for; he wanted eight hours a day without remembering.</em></p>
+
+<h3>Principle statements <span class="hint">— challenge one to act free: gain 1 <span class="sym">&#x24c5;</span>, the GM steps up the Doom Pool</span></h3>
+<div class="stmts">
+  <div><span class="trait">Benevolence <span class="sym">&#x2469;</span></span> — <em>“No one suffers alone on my shift.”</em></div>
+  <div><span class="trait">Cheer <span class="sym">&#x2469;</span></span> — <em>“Grief is just cheer, misfiled.”</em></div>
+  <div><span class="trait">Humility <span class="sym">&#x2467;</span></span> — <em>“I am lucky to be allowed in the room.”</em></div>
+  <div><span class="trait">Nimbleness <span class="sym">&#x2467;</span></span> — <em>“New directives, same smile.”</em></div>
+  <div><span class="trait">Probity <span class="sym">&#x2465;</span></span> — <em>“The rules are… mostly right.”</em></div>
+  <div><span class="trait">Verve <span class="sym">&#x2467;</span></span> — <em>“I arrive with energy to spare.”</em></div>
+  <div><span class="trait">Vision <span class="sym">&#x2467;</span></span> — <em>“Kier sees further than I ever will.”</em></div>
+  <div><span class="trait">Wiles <span class="sym">&#x2465;</span></span> — <em>“I wouldn't know how to scheme.”</em></div>
+  <div><span class="trait">Wit <span class="sym">&#x2467;</span></span> — <em>“Quick hands, quick mind — Lumon's mind.”</em></div>
+</div>
+
+<h3>Distinctions <span class="hint">— <span class="sym">&#x2467;</span> each; hinder: roll <span class="sym">&#x2463;</span>, gain 1 <span class="sym">&#x24c5;</span></span></h3>
+<div class="frow"><span class="lbl" style="color:#9a5b3c;">Outie</span> <em>My Outie Drowned Someone</em></div>
+<div class="frow"><span class="lbl navy">Innie</span> <em>The Friendliest Refiner on the Floor</em></div>
+<div class="frow"><span class="lbl">Free</span> <em>I Laugh When I Shouldn't</em></div>
+
+<h3>Relationships</h3>
+<div class="frow"><span class="diek navy">&#x2469;</span> <em>Ana R.</em> <span class="note">— the only one I trust with the real thoughts</span></div>
+<div class="frow"><span class="diek navy">&#x2467;</span> <em>My Outie</em> <span class="note">— he's started leaving me messages</span></div>
+<div class="frow"><span class="diek navy">&#x2467;</span> <em>Ms. Casey</em> <span class="note">— she's kind to me in Wellness; it worries me</span></div>
+
+<h3>Signature Asset · Secret</h3>
+<div class="frow"><span class="lbl">Asset <span class="diek navy">&#x2467;</span></span> <em>A ferry token in my desk drawer, warm some mornings</em></div>
+<div class="frow"><span class="lbl">Secret</span> <em>His outie has started leaving him messages — and the latest one says <strong>don't refine Cold Harbor</strong>.</em></div>
+
+<h3>The Four Tempers <span class="hint">— past <span class="sym">&#x246b;</span> → Compunction in the Break Room</span></h3>
+<div class="tempers"><span class="trait">Woe</span> <span class="pip">○ ○ ○ ○</span> &nbsp;&nbsp; <span class="trait">Frolic</span> <span class="pip">○ ○ ○ ○</span> &nbsp;&nbsp; <span class="trait">Dread</span> <span class="pip">○ ○ ○ ○</span> &nbsp;&nbsp; <span class="trait">Malice</span> <span class="pip">○ ○ ○ ○</span></div>
+
+<p class="reminder"><strong>Uphold</strong> a principle at cost: step it up for the scene. <strong>Challenge</strong> one: gain 1 <span class="sym">&#x24c5;</span> — <span style="color:#16324f;">Lumon notices.</span> Sol's Cheer is his armor and his cage; watch where it cracks.</p>
+
+</div>
+
+<!-- ================= ANA R. ================= -->
+<div class="page">
+
+<div class="halo">
+  <div class="ringfull"></div>
+  <div class="divider"></div>
+  <img class="portrait" src="file:///home/hatch/workspace/severance-primed/portraits/ana.png">
+  <span class="rdie" style="left:50%; top:4%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:50%; top:-10%; transform:translate(-50%,-50%); text-align:center; color:#16324f;">Benevolence</span>
+  <span class="rdie" style="left:79.6%; top:14.8%;"><span class="dback">&#x2465;</span><span class="dnum"></span><span class="dfront umber">&#x2465;</span></span><span class="plabel" style="left:88.6%; top:4%; transform:translate(0,-50%); text-align:left; color:#9a5b3c;">Cheer</span>
+  <span class="rdie" style="left:95.3%; top:42%;"><span class="dback">&#x2469;</span><span class="dnum"></span><span class="dfront umber">&#x2469;</span></span><span class="plabel" style="left:109.1%; top:39.6%; transform:translate(0,-50%); text-align:left; color:#9a5b3c;">Humility</span>
+  <span class="rdie" style="left:89.8%; top:73%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront umber">&#x2467;</span></span><span class="plabel" style="left:102%; top:80%; transform:translate(0,-50%); text-align:left; color:#9a5b3c;">Nimbleness</span>
+  <span class="rdie" style="left:65.7%; top:93.2%;"><span class="dback">&#x2469;</span><span class="dnum"></span><span class="dfront umber">&#x2469;</span></span><span class="plabel" style="left:70.5%; top:106.4%; transform:translate(-50%,-50%); text-align:center; color:#9a5b3c;">Probity</span>
+  <span class="rdie" style="left:34.3%; top:93.2%;"><span class="dback">&#x2465;</span><span class="dnum"></span><span class="dfront navy">&#x2465;</span></span><span class="plabel" style="left:29.5%; top:106.4%; transform:translate(-50%,-50%); text-align:center; color:#16324f;">Verve</span>
+  <span class="rdie" style="left:10.2%; top:73%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:-2%; top:80%; transform:translate(-100%,-50%); text-align:right; color:#16324f;">Vision</span>
+  <span class="rdie" style="left:4.7%; top:42%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:-9.1%; top:39.6%; transform:translate(-100%,-50%); text-align:right; color:#16324f;">Wiles</span>
+  <span class="rdie" style="left:20.4%; top:14.8%;"><span class="dback">&#x2467;</span><span class="dnum"></span><span class="dfront navy">&#x2467;</span></span><span class="plabel" style="left:11.4%; top:4%; transform:translate(-100%,-50%); text-align:right; color:#16324f;">Wit</span>
+</div>
+<div class="pg-cap">
+  <div class="pg-name">Ana R.</div>
+  <div class="pg-sub">Innie · Macrodata Refinement · 4th year</div>
+</div>
+
+<p class="reason"><span class="lbl">Outie's reason —</span> <em>A Kier devotee who severed as an act of faith; she tithed her workday to the founder.</em></p>
+
+<h3>Principle statements <span class="hint">— challenge one to act free: gain 1 <span class="sym">&#x24c5;</span>, the GM steps up the Doom Pool</span></h3>
+<div class="stmts">
+  <div><span class="trait">Benevolence <span class="sym">&#x2467;</span></span> — <em>“Kindness is doctrine made visible.”</em></div>
+  <div><span class="trait">Cheer <span class="sym">&#x2465;</span></span> — <em>“I smile when it's warranted.”</em></div>
+  <div><span class="trait">Humility <span class="sym">&#x2469;</span></span> — <em>“I am the smallest thing in Kier's house.”</em></div>
+  <div><span class="trait">Nimbleness <span class="sym">&#x2467;</span></span> — <em>“I adapt as the company requires.”</em></div>
+  <div><span class="trait">Probity <span class="sym">&#x2469;</span></span> — <em>“Doubt is a defect, and I report defects.”</em></div>
+  <div><span class="trait">Verve <span class="sym">&#x2465;</span></span> — <em>“Enthusiasm has been… difficult lately.”</em></div>
+  <div><span class="trait">Vision <span class="sym">&#x2467;</span></span> — <em>“The Eagans' vision is my vision.”</em></div>
+  <div><span class="trait">Wiles <span class="sym">&#x2467;</span></span> — <em>“Cunning, in service of the mission.”</em></div>
+  <div><span class="trait">Wit <span class="sym">&#x2467;</span></span> — <em>“A sharp mind, tithed to Kier.”</em></div>
+</div>
+
+<h3>Distinctions <span class="hint">— <span class="sym">&#x2467;</span> each; hinder: roll <span class="sym">&#x2463;</span>, gain 1 <span class="sym">&#x24c5;</span></span></h3>
+<div class="frow"><span class="lbl" style="color:#9a5b3c;">Outie</span> <em>My Outie Tithes to Kier</em></div>
+<div class="frow"><span class="lbl navy">Innie</span> <em>I Ask the Questions No One Asks</em></div>
+<div class="frow"><span class="lbl">Free</span> <em>A Mind Like a Snare</em></div>
+
+<h3>Relationships</h3>
+<div class="frow"><span class="diek navy">&#x2469;</span> <em>Sol W.</em> <span class="note">— he laughs at the wrong times; I need that</span></div>
+<div class="frow"><span class="diek navy">&#x2467;</span> <em>My Outie</em> <span class="note">— her faith built my cage; I'm starting to pick the lock</span></div>
+<div class="frow"><span class="diek navy">&#x2467;</span> <em>Seth Milchick</em> <span class="note">— fear counts as a relationship</span></div>
+
+<h3>Signature Asset · Secret</h3>
+<div class="frow"><span class="lbl">Asset <span class="diek navy">&#x2467;</span></span> <em>Pages of <em>The You You Are</em>, copied by hand, hidden in a ceiling tile</em></div>
+<div class="frow"><span class="lbl">Secret</span> <em>She keeps a list of everything Wellness asks about her outie — and the list is getting long.</em></div>
+
+<h3>The Four Tempers <span class="hint">— past <span class="sym">&#x246b;</span> → Compunction in the Break Room</span></h3>
+<div class="tempers"><span class="trait">Woe</span> <span class="pip">○ ○ ○ ○</span> &nbsp;&nbsp; <span class="trait">Frolic</span> <span class="pip">○ ○ ○ ○</span> &nbsp;&nbsp; <span class="trait">Dread</span> <span class="pip">○ ○ ○ ○</span> &nbsp;&nbsp; <span class="trait">Malice</span> <span class="pip">○ ○ ○ ○</span></div>
+
+<p class="reminder"><strong>Uphold</strong> a principle at cost: step it up for the scene. <strong>Challenge</strong> one: gain 1 <span class="sym">&#x24c5;</span> — <span style="color:#16324f;">Lumon notices.</span> Ana's Humility is devouring her curiosity; the d6s (Cheer, Verve) are where she's already slipping.</p>
+
+</div>
+
+</body>
+</html>
