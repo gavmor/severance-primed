@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SEVERANCE PRIMED — A Cortex Prime Game (Basis Document)</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.85in 0.9in 0.9in 0.9in;
+    @bottom-center {
+      content: "SEVERANCE PRIMED  ·  basis document";
+      font-family: "Noto Sans Mono", monospace;
+      font-size: 7.5pt;
+      letter-spacing: 0.12em;
+      color: #8a94a6;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: "Noto Sans Mono", monospace;
+      font-size: 8pt;
+      color: #8a94a6;
+    }
+  }
+  @page :first {
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+  }
+  html { -weasyprint-hyphens: auto; }
+  body {
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 10.2pt;
+    line-height: 1.52;
+    color: #1a1f2b;
+  }
+  /* ---------- title block ---------- */
+  .masthead {
+    border-top: 6px solid #16324f;
+    border-bottom: 2px solid #16324f;
+    padding: 26pt 0 18pt 0;
+    margin-bottom: 22pt;
+  }
+  .kicker {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.28em;
+    color: #3d6b99;
+    margin-bottom: 10pt;
+  }
+  h1.title {
+    font-family: "Noto Serif Display", "Noto Serif", serif;
+    font-weight: 900;
+    font-size: 34pt;
+    line-height: 1.05;
+    margin: 0 0 8pt 0;
+    color: #101828;
+    letter-spacing: 0.01em;
+  }
+  .subtitle {
+    font-size: 12.5pt;
+    font-style: italic;
+    color: #3a4356;
+    margin: 0 0 14pt 0;
+  }
+  .colophon {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 7.8pt;
+    line-height: 1.7;
+    color: #6b7488;
+    letter-spacing: 0.04em;
+  }
+  /* ---------- sections ---------- */
+  h2 {
+    font-family: "Noto Serif Display", "Noto Serif", serif;
+    font-size: 16pt;
+    color: #16324f;
+    border-bottom: 1.5px solid #c9d4e2;
+    padding-bottom: 4pt;
+    margin: 24pt 0 10pt 0;
+    page-break-after: avoid;
+  }
+  h2 .secnum {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    color: #3d6b99;
+    display: block;
+    margin-bottom: 2pt;
+  }
+  h3 {
+    font-family: "Noto Serif", serif;
+    font-size: 11.5pt;
+    font-weight: bold;
+    color: #16324f;
+    margin: 14pt 0 6pt 0;
+    page-break-after: avoid;
+  }
+  p { margin: 0 0 8pt 0; text-align: justify; }
+  ul, ol { margin: 0 0 8pt 0; padding-left: 18pt; }
+  li { margin-bottom: 4pt; }
+  li::marker { color: #3d6b99; }
+  strong { color: #101828; }
+  em { color: #2c3444; }
+
+  .lede {
+    font-size: 11.5pt;
+    font-style: italic;
+    color: #2c3444;
+    border-left: 3px solid #3d6b99;
+    padding-left: 12pt;
+    margin: 12pt 0 14pt 0;
+    text-align: left;
+  }
+  .rulebox {
+    border: 1px solid #b9c6d8;
+    border-left: 4px solid #16324f;
+    background: #f4f7fb;
+    padding: 10pt 12pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+  .rulebox .rlabel {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    color: #3d6b99;
+    margin-bottom: 6pt;
+  }
+  .rulebox p:last-child { margin-bottom: 0; }
+  .doctrine {
+    font-style: italic;
+    color: #16324f;
+  }
+
+  table.principles {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.3pt;
+    margin: 10pt 0 14pt 0;
+    line-height: 1.45;
+  }
+  table.principles th {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.14em;
+    text-align: left;
+    color: #f4f7fb;
+    background: #16324f;
+    padding: 6pt 8pt;
+  }
+  table.principles td {
+    border-bottom: 1px solid #d7dee9;
+    padding: 6pt 8pt;
+    vertical-align: top;
+  }
+  table.principles tr td:first-child {
+    font-weight: bold;
+    color: #16324f;
+    white-space: nowrap;
+  }
+  table.principles td.stmt { font-style: italic; color: #3a4356; }
+
+  .charcard {
+    border: 1.5px solid #16324f;
+    padding: 12pt 14pt;
+    margin: 12pt 0 16pt 0;
+    page-break-inside: avoid;
+    background: #fbfcfe;
+  }
+  .charcard .cname {
+    font-family: "Noto Serif Display", serif;
+    font-size: 14pt;
+    font-weight: 900;
+    color: #101828;
+    margin-bottom: 2pt;
+  }
+  .charcard .crole {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    color: #3d6b99;
+    margin-bottom: 8pt;
+  }
+  .charcard dl { margin: 0; font-size: 9.6pt; }
+  .charcard dt {
+    font-weight: bold; color: #16324f; margin-top: 6pt;
+  }
+  .charcard dd { margin: 2pt 0 0 0; }
+  .die {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 8.5pt;
+    background: #16324f;
+    color: #fff;
+    padding: 1pt 5pt;
+    border-radius: 3pt;
+    white-space: nowrap;
+  }
+
+  .modlist { columns: 2; column-gap: 24pt; font-size: 9.4pt; }
+  .modlist h4 {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 8pt;
+    letter-spacing: 0.16em;
+    color: #3d6b99;
+    margin: 10pt 0 4pt 0;
+    break-after: avoid;
+  }
+  .modlist ul { margin: 0 0 6pt 0; padding-left: 14pt; }
+  .modlist li { margin-bottom: 2pt; break-inside: avoid; }
+
+  .finenote {
+    font-size: 8.6pt;
+    color: #6b7488;
+    border-top: 1px solid #d7dee9;
+    margin-top: 22pt;
+    padding-top: 8pt;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">A CORTEX PRIME GAME &mdash; BASIS DOCUMENT</div>
+  <h1 class="title">Severance<br>Primed</h1>
+  <p class="subtitle">Work is worship. The self is a shift. You are two people, and only one of them is free.</p>
+  <div class="colophon">
+    REQUIRES THE CORTEX PRIME GAME HANDBOOK &middot; 3&ndash;5 PLAYERS + ONE GM<br>
+    BUILT FROM KIER EAGAN'S NINE PRINCIPLES &middot; CANON-GROUNDED TO THE SEVERED FLOOR
+  </div>
+</div>
+
+<p class="lede">You play the innies of Lumon Industries: people who agreed to have their memories surgically divided, so that the self who clocks in never knows the self who clocks out. By day you refine mysterious numbers in a windowless room. By night &mdash; in brief, stolen interludes &mdash; you glimpse the outie whose life paid for yours. Lumon calls the arrangement a gift. The Nine Principles say what you must become to deserve it. This game is about what happens when you stop becoming it.</p>
+
+<h2><span class="secnum">01 &middot; GENRE</span>Genre, Theme &amp; Mood</h2>
+
+<p><strong>Genre, reverse-engineered:</strong> corporate dystopia &times; paranoid espionage thriller &times; religious cult drama. On the fantastic&ndash;realistic axis the game sits almost entirely on the realistic side: one science-fictional device (the severance chip) in an otherwise present-day world of fluorescent offices, company towns, and middle management. The horror is bureaucratic, not cosmic.</p>
+
+<p><strong>Theme:</strong> who owns a self &mdash; the person who suffers, or the company that bought the suffering? Every mechanic in this game asks the same question two ways: what will you surrender to belong, and what will you risk to remember?</p>
+
+<p><strong>Mood:</strong> sterile, uncanny, retro-futurist dread &mdash; long fluorescent hallways, cheerful posters, a waffle party that feels like a threat &mdash; punctured by small, fierce human warmth: a shared joke in MDR, a map drawn from memory, a book passed hand to hand. Play it straight. Let the comedy come from the doctrine, never from the people.</p>
+
+<p><strong>The protagonists</strong> are severed workers &mdash; refiners, designers, goat-tenders &mdash; with no power except each other and the truth. <strong>The antagonist</strong> is not a person but a system: Lumon Industries, its doctrine, its cameras, its kindness. Named enforcers (Cobel, Milchick) appear as GMCs, but they are the doctrine's hands, not its heart. Per the Cortex heuristics, a system-antagonist means the game's opposition runs on the <strong>Doom Pool</strong> and <strong>Crisis Pools</strong>, not on contests against a faction.</p>
+
+<h2><span class="secnum">02 &middot; TRAITS</span>Trait Sets &amp; Distinctions</h2>
+
+<p>Three prime sets, plus Distinctions as always. There are no Attributes, no Skills, no Powers on the severed floor &mdash; Lumon hired your hands, not your r&eacute;sum&eacute;, and the chip took the rest.</p>
+
+<h3>Distinctions</h3>
+<p>Three per PC, each rated <span class="die">d8</span> (roll <span class="die">d4</span> instead to gain 1 PP, per the standard rule). Severance imposes one structure on them: <strong>one distinction must belong to your outie</strong> (the life outside: <em>My Outie Buried His Wife on a Tuesday</em>), <strong>one must belong to your innie</strong> (the life at work: <em>The Friendliest Refiner on the Floor</em>), and <strong>one is free</strong> &mdash; the self in question, the part of you neither Lumon nor your outie can fully name (<em>I Laugh When I Shouldn't</em>).</p>
+
+<h3>The Nine Principles (Values)</h3>
+<p>The game's Values set is Kier Eagan's Nine Principles &mdash; the doctrine's virtues, each carrying its true function underneath. Every principle is rated <span class="die">d4</span>&ndash;<span class="die">d12</span> and carries a one-line <strong>statement</strong>, written in Kier's liturgical voice or your own. The ratings measure how deeply the innie has internalized the doctrine &mdash; not how good they are.</p>
+
+<table class="principles">
+  <tr><th>PRINCIPLE</th><th>THE VIRTUE IT CLAIMS</th><th>THE WORK IT DOES</th><th>EXAMPLE STATEMENT</th></tr>
+  <tr><td>Vision</td><td>Clarity of purpose; faith in Kier's path</td><td>Suppresses questions; binds you to an unquestionable mission</td><td class="stmt">"Kier's path is the only path worth seeing."</td></tr>
+  <tr><td>Verve</td><td>Constant energy and enthusiasm</td><td>Forces permanent upbeat commitment, even under pressure</td><td class="stmt">"I bring my whole heart to every shift."</td></tr>
+  <tr><td>Wit</td><td>Practical intelligence in service of the company</td><td>Values quick thinking &mdash; only when aligned with Lumon</td><td class="stmt">"My cleverness belongs to Lumon."</td></tr>
+  <tr><td>Cheer</td><td>Happiness as the default</td><td>Enforces mandatory positivity; a facade of well-being</td><td class="stmt">"A smiling refiner is a loyal refiner."</td></tr>
+  <tr><td>Humility</td><td>Submission before Kier's leadership</td><td>Turns pride into obedience; self-erasure as virtue</td><td class="stmt">"I am small; Kier is great."</td></tr>
+  <tr><td>Benevolence</td><td>Courtesy and kindness among colleagues</td><td>Masks conflict; preserves harmony, even in abusive settings</td><td class="stmt">"We are all friends here."</td></tr>
+  <tr><td>Nimbleness</td><td>Flexibility; resistance-free adaptation</td><td>Rewards swift obedience to imposed change</td><td class="stmt">"I bend the way the company bends me."</td></tr>
+  <tr><td>Probity</td><td>Moral integrity as total compliance</td><td>Treats any disagreement as a character flaw</td><td class="stmt">"To question is to fail."</td></tr>
+  <tr><td>Wiles</td><td>Strategy and cunning in pursuit of goals</td><td>Justifies manipulation &mdash; in the mission's name</td><td class="stmt">"The mission excuses the method."</td></tr>
+</table>
+
+<div class="rulebox">
+  <div class="rlabel">PRINCIPLES IN PLAY</div>
+  <p><strong>Uphold.</strong> When you act at real cost to honor a principle's statement &mdash; smiling through the grief, obeying the order that sickens you &mdash; step that principle up one die for the rest of the scene, and describe the doctrine speaking through you.</p>
+  <p><strong>Challenge.</strong> When you violate a principle to act like a free person &mdash; asking the forbidden question, refusing the cheerful mask, turning your wiles against Lumon itself &mdash; gain <strong>1 PP</strong>, and the GM steps up the lowest die in the Doom Pool. <span class="doctrine">Lumon notices.</span> The waffle party's nine-tailed whip has one tail for each principle; every challenge is a lash the doctrine remembers.</p>
+</div>
+
+<h3>Relationships</h3>
+<p>Rated <span class="die">d6</span> / <span class="die">d8</span> / <span class="die">d10</span>. Innies have few people; rate what matters:</p>
+<ul>
+  <li><strong><span class="die">d10</span></strong> &mdash; one fellow innie you trust with your real thoughts.</li>
+  <li><strong><span class="die">d8</span></strong> &mdash; <strong>My Outie</strong>: your relationship with your own other self. Roll it when you act on knowledge only your outie could have, when you defy your outie's wishes, or when the two of you &mdash; impossibly &mdash; seem to be working together.</li>
+  <li><strong><span class="die">d8</span></strong> &mdash; one more: a coworker, someone from your outie's life, or a Management figure (Cobel, Milchick, Ms.&nbsp;Casey).</li>
+  <li>Everything else is <span class="die">d6</span>: the department as a whole, the Eagan family as an idea, the Board as a rumor.</li>
+</ul>
+
+<h3>Signature Assets</h3>
+<p>One per PC: a single object the innie has hidden, found, or been given &mdash; <em>Irving's hand-drawn map of the severed floor</em>, <em>a contraband copy of</em> The You You Are, <em>a note in my own handwriting I don't remember writing</em>. Rated <span class="die">d8</span>; it can be taken away, which is why it matters.</p>
+
+<h2><span class="secnum">03 &middot; CREATION</span>Character Creation (Scratch-Built)</h2>
+
+<p>Scratch-built: the show is about discovering who you are, so each player builds their own two selves. Work through these steps together, out loud &mdash; the table should know every outie's reason, the way coworkers slowly learn each other's.</p>
+<ol>
+  <li><strong>Choose a department.</strong> Macrodata Refinement (sorting numbers that feel wrong), Optics &amp; Design (printing the doctrine's posters, nursing old rivalries), Mammalians Nurturable (tending the goats; no one will tell you why), Choreography &amp; Merriment. Departments are flavor and access, not dice &mdash; but where you work decides what you can reach.</li>
+  <li><strong>Name your innie</strong> (first name + last initial, Lumon style) and <strong>your outie's reason for severance</strong>: grief, debt, a crime, coercion, belief. One sentence. The table hears it.</li>
+  <li><strong>Write three Distinctions</strong> &mdash; one outie, one innie, one free &mdash; each at <span class="die">d8</span>.</li>
+  <li><strong>Rate the Nine Principles.</strong> All begin at <span class="die">d8</span>; step <strong>two</strong> up to <span class="die">d10</span> and <strong>two</strong> down to <span class="die">d6</span>. Write a one-line statement for each. Your two <span class="die">d10</span>s are the doctrine's hooks in you; your two <span class="die">d6</span>s are where you're already slipping.</li>
+  <li><strong>Rate Relationships</strong> per the spread above.</li>
+  <li><strong>Choose a Signature Asset</strong> (<span class="die">d8</span>) and say where it's hidden.</li>
+  <li><strong>Name your Secret</strong> &mdash; the one thing you are hiding from Lumon. (<em>I found a message from my outie. I think Ms.&nbsp;Casey is someone's wife. I know what the goats are for.</em>) This is campaign fuel; tell the GM, not necessarily the table.</li>
+</ol>
+<p>Start with <strong>1 PP</strong>. The Four Tempers (below) all begin unstressed.</p>
+
+<h2><span class="secnum">04 &middot; CONFLICT</span>Conflict &amp; Harm</h2>
+
+<h3>Tests, Contests, and Who You Roll Against</h3>
+<p>Default turn order is <strong>Dramatic</strong> &mdash; this is a game of glances, whispers, and break-room summons. Switch to <strong>Action Order</strong> only when the floor goes loud: a lockdown, a chase through the stairwell, the contingency going off.</p>
+<p><strong>Contests</strong> happen only against named GMCs &mdash; out-staring Milchick, lying to Cobel's face. You never roll against Lumon itself, the Board, or a department: those are systems, and systems are the <strong>Doom Pool</strong> and <strong>Crisis Pools</strong>.</p>
+
+<h3>The Nine (Doom Pool)</h3>
+<p>Lumon's doctrine, weaponized. The Doom Pool begins at <span class="die">d6</span> <span class="die">d6</span> and follows the standard rules &mdash; the GM adds a die on player opportunities (rolled 1s) &mdash; plus Severance-specific triggers:</p>
+<ul>
+  <li><strong>Grows</strong> when a PC challenges a Principle (step up the lowest die), when a shift ends with the File unrefined, when the Overtime Contingency is used, and after every Compunction.</li>
+  <li><strong>Spends</strong> to interrupt a scene with Management, to inflict temper stress directly (<em>Cobel's smile doesn't reach her eyes &mdash; take Dread stress</em>), to summon a PC to the Break Room or Wellness, to separate the party, or to reveal that a trusted routine was surveillance all along.</li>
+  <li><strong>Escalation:</strong> once the pool holds <span class="die">d10</span>s, the Board takes notice &mdash; new directives, new cameras, a visit. At <span class="die">d12</span> <span class="die">d12</span>, the endgame unlocks: the testing floor doors open, or the Board convenes, and the season turns.</li>
+</ul>
+
+<h3>The Files (Crisis Pools) &mdash; Refinement</h3>
+<p>Each MDR file &mdash; <em>Cold Harbor</em>, <em>Allentown</em>, <em>Siena</em> &mdash; is a <strong>Crisis Pool</strong> (e.g. Cold Harbor: three <span class="die">d8</span>s). A shift is a <strong>Timed Test</strong>: each refiner acts once, assembling a pool of a Principle (Wit, Nimbleness, and &mdash; daringly &mdash; Wiles) plus Distinctions and Relationships for teamwork. Effect dice step the File down; when the pool is gone, the file is complete &mdash; and something is revealed: a name, a face, a set of numbers that sorts toward someone you know.</p>
+<p>Rolling a 1 while refining means the numbers got to you: take temper stress (GM's choice of Woe or Dread). This is the job's real wage.</p>
+
+<h3>The Four Tempers (Stress)</h3>
+<p>Emotional harm in this game lands on four stress tracks &mdash; Kier's <strong>Four Tempers</strong>: <strong>Woe</strong>, <strong>Frolic</strong>, <strong>Dread</strong>, <strong>Malice</strong>. Lumon teaches that these are weaknesses to be tamed; the game treats them as the proof you're still human. Each track steps <span class="die">d6</span> &rarr; <span class="die">d8</span> &rarr; <span class="die">d10</span> &rarr; <span class="die">d12</span>. At <span class="die">d10</span> or higher the temper visibly warps your behavior &mdash; roleplay it; everyone at the table can see the crack.</p>
+
+<div class="rulebox">
+  <div class="rlabel">COMPUNCTION</div>
+  <p>When a temper would step past <span class="die">d12</span>, the innie is <strong>summoned to the Break Room</strong>. Play the scene: the small room, the compunction statement read aloud, read again, read until it sounds true. When it's over, the temper resets to <span class="die">d6</span> &mdash; but the GM adds a <span class="die">d8</span> to the Doom Pool and steps <strong>down</strong> one of the PC's Principles. The doctrine corrects. It always collects its fee.</p>
+</div>
+
+<h3>The Break Room, Wellness, and the Carrot</h3>
+<p>The Break Room is the stick (above). <strong>Wellness sessions</strong> with Ms.&nbsp;Casey are the carrot: a PC who completes a wellness session steps <em>down</em> one temper of their choice &mdash; but Ms.&nbsp;Casey always asks one question she shouldn't be able to ask, about the outie's life. Answering truthfully creates an Asset for Management (the GM notes it); deflecting is a Contest. Nothing at Lumon is free.</p>
+<p><strong>Waffle parties and Music Dance Experiences</strong> work the same way at group scale: tempers step down across the department, and the Doom Pool grows a die. Joy, metered and priced.</p>
+
+<h3>The Overtime Contingency</h3>
+<p>Spend <strong>1 PP</strong> and add a <span class="die">d8</span> to the Doom Pool: your <strong>outie wakes inside</strong> for one scene. Roll only outie-side traits &mdash; Outie distinction, free distinction, Relationships &mdash; no Principles; the doctrine doesn't recognize this person. What the outie does with the body, the innie will never remember &mdash; unless someone was watching.</p>
+
+<h3>Resignation Requests</h3>
+<p>Filing one is a Test against the Doom Pool. Success means the request reaches your outie. Whether the outie honors it &mdash; whether they even open it &mdash; is a scene for an Outie Interlude, and the GM is under no obligation to be kind.</p>
+
+<h2><span class="secnum">05 &middot; INTERLUDES</span>Outie Interludes &amp; Reintegration</h2>
+
+<h3>Outie Interludes</h3>
+<p>Between shifts, each player frames a short scene as their <strong>outie</strong> &mdash; the parking lot, the apartment, the support group for the severed. Outies assemble pools from <strong>Distinctions and Relationships only</strong>: no Principles. The doctrine doesn't live outside the building.</p>
+<p>Discoveries made out here become <strong>Assets the innie finds without knowing why</strong>: <em>a note in your own handwriting &mdash;</em> don't trust the numbers <em>(&nbsp;<span class="die">d8</span>&nbsp;)</em>. The GM may also frame an interlude <em>against</em> the player: the outie considering quitting, the outie meeting someone reintegrated, the outie doing something the innie would hate them for. The two of you share a body and nothing else &mdash; act like it.</p>
+
+<h3>Reintegration (Growth Pool)</h3>
+<p>Use the <strong>Growth Pool</strong>. At session's end, nominate moments when the selves bled through &mdash; a memory that surfaced mid-shift, an outie dreaming the fluorescent halls. Spend growth to buy <strong>Bridges</strong>: a shared memory both selves can roll, written as a trait both halves of the character sheet can reach (<em>The Lake House, Age Nine</em> &mdash; <span class="die">d8</span>). Bridges are usable by innie <em>and</em> outie, Principles or no Principles. The third Bridge frays the severance for good &mdash; that character's endgame has begun, and Lumon will do anything to stop it.</p>
+
+<h2><span class="secnum">06 &middot; LOADOUT</span>Mod Loadout</h2>
+
+<div class="modlist">
+  <h4>TRAIT &amp; TRAIT MODS</h4>
+  <ul>
+    <li>Distinctions (outie / innie / free structure)</li>
+    <li>Values &mdash; as <strong>The Nine Principles</strong>, rated, with statements</li>
+    <li>Relationships (incl. <em>My Outie</em>)</li>
+    <li>Signature Assets</li>
+    <li>Trait Statements (on Principles)</li>
+  </ul>
+  <h4>CHARACTER CREATION</h4>
+  <ul><li>Scratch-Built (7 steps)</li></ul>
+  <h4>GROWING CHARACTERS</h4>
+  <ul><li>Growth Pool &mdash; as <strong>Reintegration</strong> (Bridges)</li></ul>
+  <h4>CONFLICTS &amp; CONFLICT MODS</h4>
+  <ul>
+    <li>Tests; Timed Tests (refinement shifts)</li>
+    <li>Contests &mdash; vs. named GMCs only</li>
+    <li>Crisis Pools &mdash; as <strong>The Files</strong></li>
+    <li>Doom Pool &mdash; as <strong>The Nine</strong></li>
+    <li>Dramatic Order (default); Action Order (lockdowns)</li>
+  </ul>
+  <h4>DICE &amp; ROLLING</h4>
+  <ul><li>Static Difficulty (routine work)</li></ul>
+  <h4>COMPLICATIONS</h4>
+  <ul>
+    <li>Complications (standard)</li>
+    <li>Stress &mdash; as <strong>The Four Tempers</strong>, with <strong>Compunction</strong> replacing stress-out</li>
+  </ul>
+  <h4>PLOT POINTS</h4>
+  <ul><li>Starting PP: 1</li></ul>
+  <h4>GMCs</h4>
+  <ul>
+    <li>Major: Harmony Cobel, Seth Milchick</li>
+    <li>Minor: Ms.&nbsp;Casey, outies, department heads</li>
+    <li>Faction: The Board (never seen; speaks through a speaker)</li>
+    <li>Location GMCs: the severed floor itself</li>
+  </ul>
+</div>
+
+<h2><span class="secnum">07 &middot; THE FLOOR</span>The Severed Floor</h2>
+
+<p><strong>Macrodata Refinement</strong> &mdash; your desks, your numbers, the eerie calm. <strong>Optics &amp; Design</strong> &mdash; poster presses, old departmental grudges, surprisingly good coffee. <strong>Mammalians Nurturable</strong> &mdash; the goats; ask no questions. <strong>The Break Room</strong> &mdash; small, quiet, the statement on the table. <strong>Wellness</strong> &mdash; Ms.&nbsp;Casey's room, blue like a held breath. <strong>The Perpetuity Wing</strong> &mdash; Kier's statue, the paintings, the Eagan lineage watching. <strong>The Exports Hall</strong> &mdash; you do not go there. <strong>The stairwell, the parking lot</strong> &mdash; where the selves change places and neither remembers the handoff.</p>
+<p><strong>Harmony Cobel</strong> believes &mdash; truly, terribly believes. <strong>Seth Milchick</strong> enforces with a smile that has read the manual on smiles. <strong>Ms.&nbsp;Casey</strong> asks how your outie is doing, and waits. <strong>The Board</strong> never appears; when it speaks, the speaker crackles and everyone stands a little straighter. Outies drift through interludes like weather: grieving, indebted, devout, desperate &mdash; each one the reason the innie exists and the threat that could end them.</p>
+
+<h2><span class="secnum">08 &middot; SAMPLES</span>Sample Characters</h2>
+
+<div class="charcard">
+  <div class="cname">Sol W.</div>
+  <div class="crole">MACRODATA REFINEMENT &middot; INNIE, SECOND YEAR</div>
+  <dl>
+    <dt>Outie's reason</dt><dd>Severed after the ferry accident he blames himself for &mdash; he wanted eight hours a day without remembering.</dd>
+    <dt>Distinctions</dt><dd><em>My Outie Drowned Someone</em> (outie) <span class="die">d8</span> &middot; <em>The Friendliest Refiner on the Floor</em> (innie) <span class="die">d8</span> &middot; <em>I Laugh When I Shouldn't</em> (free) <span class="die">d8</span></dd>
+    <dt>Principles</dt><dd>Cheer <span class="die">d10</span> <span class="doctrine">"Grief is just cheer, misfiled."</span> &middot; Benevolence <span class="die">d10</span> &middot; Wiles <span class="die">d6</span> &middot; Probity <span class="die">d6</span> &middot; all others <span class="die">d8</span></dd>
+    <dt>Relationships</dt><dd>Ana R. <span class="die">d10</span> &middot; My Outie <span class="die">d8</span> &middot; Ms.&nbsp;Casey <span class="die">d8</span> &middot; rest <span class="die">d6</span></dd>
+    <dt>Signature Asset</dt><dd><em>A ferry token in my desk drawer, warm some mornings</em> <span class="die">d8</span></dd>
+    <dt>Secret</dt><dd>His outie has started leaving him messages &mdash; and the latest one says <em>don't refine Cold Harbor</em>.</dd>
+  </dl>
+</div>
+
+<div class="charcard">
+  <div class="cname">Ana R.</div>
+  <div class="crole">MACRODATA REFINEMENT &middot; INNIE, FOURTH YEAR</div>
+  <dl>
+    <dt>Outie's reason</dt><dd>A Kier devotee who severed as an act of faith &mdash; she tithed her workday to the founder.</dd>
+    <dt>Distinctions</dt><dd><em>My Outie Tithes to Kier</em> (outie) <span class="die">d8</span> &middot; <em>I Ask the Questions No One Asks</em> (innie) <span class="die">d8</span> &middot; <em>A Mind Like a Snare</em> (free) <span class="die">d8</span></dd>
+    <dt>Principles</dt><dd>Humility <span class="die">d10</span> <span class="doctrine">"I am the smallest thing in Kier's house."</span> &middot; Probity <span class="die">d10</span> &middot; Cheer <span class="die">d6</span> &middot; Verve <span class="die">d6</span> &middot; all others <span class="die">d8</span></dd>
+    <dt>Relationships</dt><dd>Sol W. <span class="die">d10</span> &middot; My Outie <span class="die">d8</span> &middot; Seth Milchick <span class="die">d8</span> (fear counts) &middot; rest <span class="die">d6</span></dd>
+    <dt>Signature Asset</dt><dd><em>Pages of</em> The You You Are <em>copied by hand, hidden in a ceiling tile</em> <span class="die">d8</span></dd>
+    <dt>Secret</dt><dd>She has started keeping a list of everything Wellness asks about her outie &mdash; and the list is getting long.</dd>
+  </dl>
+</div>
+
+<h2><span class="secnum">09 &middot; SESSION ONE</span>Session One: Orientation</h2>
+
+<p><strong>Situation.</strong> A new file, <strong>COLD HARBOR</strong>, has landed in Macrodata Refinement with a quota and a deadline. Management announces a "wellness initiative": mandatory sessions for all refiners. And Petra D., the department's senior refiner, hasn't come back from the Break Room &mdash; it's been three days, and her desk is exactly as she left it. The PCs are the refiners left holding the file.</p>
+
+<p><strong>Reveals</strong> (one per PC, plus the floor):</p>
+<ul>
+  <li><em>For the new hire:</em> the orientation video addresses you by a name that isn't yours &mdash; then corrects itself. No one else reacts.</li>
+  <li><em>For the veteran:</em> the numbers in Cold Harbor sort toward a face you almost recognize. Roll Woe or look away.</li>
+  <li><em>For the believer:</em> Ms.&nbsp;Casey asks about your outie's childhood home. You never told her your outie had one.</li>
+  <li><em>For the floor:</em> the Break Room door is warm to the touch, like something in there has been breathing.</li>
+</ul>
+
+<p><strong>Opening scenes:</strong></p>
+<ol>
+  <li><strong>The video.</strong> Kier's voice over the Perpetuity Wing tour: the Nine Principles recited like scripture. Each player states which principle their innie clings to &mdash; and which one already itches.</li>
+  <li><strong>First shift.</strong> Cold Harbor on the screens (Crisis Pool, three <span class="die">d8</span>s). Refine. The numbers feel wrong for exactly one PC &mdash; their choice which, and why.</li>
+  <li><strong>The summons.</strong> Split the party: one PC to Wellness (Ms.&nbsp;Casey, one impossible question), one to the Break Room (Petra D.'s chair is still warm). The rest watch the hallway and learn what surveillance feels like.</li>
+</ol>
+
+<div class="finenote">
+  SEVERANCE PRIMED is a basis document &mdash; the playable core of a Cortex Prime adaptation of <em>Severance</em>, built on Kier Eagan's Nine Principles. Expand with a trait-halo character sheet (the innie/outie split begs for one), department playbooks, and a full season arc toward Cold Harbor's completion. Remember the show's rule, which is this game's rule too: <span class="doctrine">the work is mysterious and important.</span>
+</div>
+
+</body>
+</html>
